@@ -24,7 +24,29 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   } catch (e) {
     console.warn("PrivateVote deploy skipped:", (e as Error).message);
   }
+
+  // Deploy factory
+  try {
+    const deployedFactory = await deploy("PrivateVoteFactory", {
+      from: deployer,
+      log: true,
+    });
+    console.log(`PrivateVoteFactory contract: `, deployedFactory.address);
+  } catch (e) {
+    console.warn("PrivateVoteFactory deploy skipped:", (e as Error).message);
+  }
+
+  // Deploy RatingFactory
+  try {
+    const deployedRatingFactory = await deploy("RatingFactory", {
+      from: deployer,
+      log: true,
+    });
+    console.log(`RatingFactory contract: `, deployedRatingFactory.address);
+  } catch (e) {
+    console.warn("RatingFactory deploy skipped:", (e as Error).message);
+  }
 };
 export default func;
 func.id = "deploy_fheCounter"; // id required to prevent reexecution
-func.tags = ["FHECounter", "PrivateVote"];
+func.tags = ["FHECounter", "PrivateVote", "PrivateVoteFactory", "RatingFactory"];

@@ -40,6 +40,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(900px 450px at 50% -180px, rgba(255, 204, 0, 0.12) 0%, rgba(0, 0, 0, 0) 60%),
+    radial-gradient(600px 300px at 110% -100px, rgba(255, 204, 0, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+  background-attachment: fixed;
 }
 
 h1 {
@@ -77,6 +82,21 @@ button:hover {
 .btn-outline:hover {
   border-color: var(--yellow);
   color: var(--yellow);
+}
+input,
+textarea {
+  width: 100%;
+  background: #0f1216;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
 }
 button:focus,
 button:focus-visible {
