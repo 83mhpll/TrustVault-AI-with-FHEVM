@@ -1,0 +1,22 @@
+[
+  { "name": "OpenAI GPT-4.1 Mini", "tags": ["general"] },
+  { "name": "OpenAI GPT-4o", "tags": ["general", "multimodal"] },
+  { "name": "GPT-5 (preview)", "tags": ["general"] },
+  { "name": "Anthropic Claude 3.7 Sonnet", "tags": ["general"] },
+  { "name": "Anthropic Claude 3.5 Sonnet", "tags": ["general"] },
+  { "name": "Google Gemini 2.5 Pro", "tags": ["general"] },
+  { "name": "Google Gemini 2.5 Flash", "tags": ["general", "speed"] },
+  { "name": "DeepSeek V3.1", "tags": ["coding"] },
+  { "name": "DeepSeek V3 0324", "tags": ["coding"] },
+  { "name": "Qwen 2.5 Max", "tags": ["general"] },
+  { "name": "Qwen 2.5 Coder", "tags": ["coding"] },
+  { "name": "Llama 3.1 405B Instruct", "tags": ["general"] },
+  { "name": "Llama 3.1 70B Instruct", "tags": ["general"] },
+  { "name": "Cohere Command R+", "tags": ["general"] },
+  { "name": "xAI Grok-2", "tags": ["general"] },
+  { "name": "Grok Code Fast 1", "tags": ["coding", "speed"] },
+  { "name": "Mistral Large 2", "tags": ["general"] },
+  { "name": "Mistral Small 3", "tags": ["speed"] },
+  { "name": "OpenAI GPT-4.1", "tags": ["general"] },
+  { "name": "Anthropic Claude 3 Opus", "tags": ["general"] }
+]
