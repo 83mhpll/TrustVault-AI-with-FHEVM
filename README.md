@@ -107,8 +107,18 @@ VITE_MODELS_URL=https://your-domain/models.json
 ### Deployed Contracts
 
 - RatingFactory: 0x45Fba25A3Eea1d0f3A7f43B3939CF93F83bE8795
+- Etherscan: https://sepolia.etherscan.io/address/0x45Fba25A3Eea1d0f3A7f43B3939CF93F83bE8795#code
 - RatingItem(s):
   - 0xFA6A70E59D0A816C6D99a28a46E607566813B183 — Model: GPT-4o
+
+Other verified contracts:
+
+- FHECounter: 0x41Ce21962e2c843EdebC0E22576c5404E8522b19
+  - https://sepolia.etherscan.io/address/0x41Ce21962e2c843EdebC0E22576c5404E8522b19#code
+- PrivateVote: 0xc273FB5AfD835bEBc974b9950DfA18C2027A3D2c (args: 2)
+  - https://sepolia.etherscan.io/address/0xc273FB5AfD835bEBc974b9950DfA18C2027A3D2c#code
+- PrivateVoteFactory: 0x02457F5A256D03E2defC0DC57488B16d0Bc63637
+  - https://sepolia.etherscan.io/address/0x02457F5A256D03E2defC0DC57488B16d0Bc63637#code
 
 ## Submission Checklist (Developer Program)
 
