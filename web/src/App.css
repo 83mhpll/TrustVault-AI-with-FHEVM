@@ -119,6 +119,9 @@
   justify-content: space-between;
   margin-bottom: 8px;
 }
+.card-header > div:first-child {
+  font-size: 18px;
+}
 .pill {
   background: #0f3b1f;
   color: var(--success);
@@ -141,6 +144,10 @@
   border: 1px solid var(--border);
   padding: 8px;
   border-radius: 8px;
+}
+.option:hover {
+  border-color: var(--yellow);
+  cursor: pointer;
 }
 .footer {
   display: flex;
