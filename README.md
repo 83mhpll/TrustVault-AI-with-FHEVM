@@ -1,110 +1,84 @@
-# FHEVM Hardhat Template
+# FHEVM PrivateVote dApp
 
-A Hardhat-based template for developing Fully Homomorphic Encryption (FHE) enabled Solidity smart contracts using the
-FHEVM protocol by Zama.
+โครงการตัวอย่าง dApp โหวตแบบเข้ารหัสบน FHEVM ประกอบด้วย:
+- สัญญาอัจฉริยะ `PrivateVote.sol` (Solidity)
+- งานทดสอบ Hardhat พร้อม FHEVM plugin
+- งาน `tasks/*` เพื่อโต้ตอบสัญญา
+- เว็บ UI (Vite + React + Wagmi + relayer SDK)
 
-## Quick Start
+## คุณสมบัติหลัก
+- โหวตแบบส่วนตัวด้วย `externalEuint32`
+- เก็บยอดนับเป็นค่าที่เข้ารหัส (handle)
+- อนุญาตอ่าน/ถอดรหัสแบบเลือกบุคคล (`FHE.allow`, `allowAllTo`)
+- Decrypt ฝั่งผู้ใช้ผ่าน relayer SDK (user decrypt + EIP-712)
 
-For detailed instructions see:
-[FHEVM Hardhat Quick Start Tutorial](https://docs.zama.ai/protocol/solidity-guides/getting-started/quick-start-tutorial)
+## เตรียมเครื่องมือ
+- Node.js 20+
+- npm 7+
+- Sepolia (สำหรับทดสอบแบบเข้ารหัสจริง)
 
-### Prerequisites
-
-- **Node.js**: Version 20 or higher
-- **npm or yarn/pnpm**: Package manager
-
-### Installation
-
-1. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-2. **Set up environment variables**
-
-   ```bash
-   npx hardhat vars set MNEMONIC
-
-   # Set your Infura API key for network access
-   npx hardhat vars set INFURA_API_KEY
-
-   # Optional: Set Etherscan API key for contract verification
-   npx hardhat vars set ETHERSCAN_API_KEY
-   ```
-
-3. **Compile and test**
-
-   ```bash
-   npm run compile
-   npm run test
-   ```
-
-4. **Deploy to local network**
-
-   ```bash
-   # Start a local FHEVM-ready node
-   npx hardhat node
-   # Deploy to local network
-   npx hardhat deploy --network localhost
-   ```
-
-5. **Deploy to Sepolia Testnet**
-
-   ```bash
-   # Deploy to Sepolia
-   npx hardhat deploy --network sepolia
-   # Verify contract on Etherscan
-   npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
-   ```
-
-6. **Test on Sepolia Testnet**
-
-   ```bash
-   # Once deployed, you can run a simple test on Sepolia.
-   npx hardhat test --network sepolia
-   ```
-
-## 📁 Project Structure
-
-```
-fhevm-hardhat-template/
-├── contracts/           # Smart contract source files
-│   └── FHECounter.sol   # Example FHE counter contract
-├── deploy/              # Deployment scripts
-├── tasks/               # Hardhat custom tasks
-├── test/                # Test files
-├── hardhat.config.ts    # Hardhat configuration
-└── package.json         # Dependencies and scripts
+## ติดตั้ง
+```bash
+npm install
 ```
 
-## 📜 Available Scripts
+## คอมไพล์และทดสอบ (mock encryption)
+```bash
+npm run compile
+npm test
+```
 
-| Script             | Description              |
-| ------------------ | ------------------------ |
-| `npm run compile`  | Compile all contracts    |
-| `npm run test`     | Run all tests            |
-| `npm run coverage` | Generate coverage report |
-| `npm run lint`     | Run linting checks       |
-| `npm run clean`    | Clean build artifacts    |
+## ดีพลอย
+ตั้งค่า Hardhat vars หากจะใช้ Sepolia:
+```bash
+npx hardhat vars set MNEMONIC
+npx hardhat vars set INFURA_API_KEY
+```
+ดีพลอย:
+```bash
+npx hardhat --network sepolia deploy
+```
 
-## 📚 Documentation
+## ใช้งานผ่าน Task
+ตัวอย่างบนโหนดโลคอล:
+```bash
+# รันโหนด
+npx hardhat node
+# ดีพลอย
+npx hardhat --network localhost deploy
+# ดูที่อยู่
+npx hardhat --network localhost task:pv:address
+# โหวต (index 1)
+npx hardhat --network localhost task:pv:vote --index 1
+# ถอดรหัสค่าทุกตัวเลือก
+npx hardhat --network localhost task:pv:decrypt-all
+```
 
-- [FHEVM Documentation](https://docs.zama.ai/fhevm)
-- [FHEVM Hardhat Setup Guide](https://docs.zama.ai/protocol/solidity-guides/getting-started/setup)
-- [FHEVM Testing Guide](https://docs.zama.ai/protocol/solidity-guides/development-guide/hardhat/write_test)
-- [FHEVM Hardhat Plugin](https://docs.zama.ai/protocol/solidity-guides/development-guide/hardhat)
+## เว็บ UI
+ดู `web/README.md` สำหรับขั้นตอนอย่างย่อ:
+```bash
+cd web
+npm install
+npm run dev
+```
+เปิดลิงก์ Local ในเทอร์มินัล จากนั้น:
+- Connect วอลเล็ตบน Sepolia
+- ใส่ที่อยู่สัญญา `PrivateVote`
+- กด Grant Read Access หนึ่งครั้ง
+- Decrypt tallies และลอง Vote
 
-## 📄 License
+## โครงสร้างโปรเจกต์
+```
+contracts/PrivateVote.sol     # สัญญาโหวตแบบเข้ารหัส
+tasks/PrivateVote.ts          # คำสั่งโต้ตอบ (deploy, vote, decrypt)
+test/PrivateVote.ts           # ชุดทดสอบ mock FHEVM
+web/                          # เว็บ UI
+```
 
-This project is licensed under the BSD-3-Clause-Clear License. See the [LICENSE](LICENSE) file for details.
+## หมายเหตุ
+- โค้ด Solidity ผ่านการจัดรูปแบบและตรวจลินต์ด้วย Solhint แล้ว
+- เลี่ยงการใช้หลายวอลเล็ตพร้อมกันในเบราว์เซอร์ (เหลือแค่ตัวเดียว)
 
-## 🆘 Support
-
-- **GitHub Issues**: [Report bugs or request features](https://github.com/zama-ai/fhevm/issues)
-- **Documentation**: [FHEVM Docs](https://docs.zama.ai)
-- **Community**: [Zama Discord](https://discord.gg/zama)
-
----
-
-**Built with ❤️ by the Zama team**
+## อ้างอิง
+- FHEVM Solidity, Hardhat Plugin และ Relayer SDK โดย Zama
+- เอกสารตัวอย่างและแนวทาง: `https://docs.zama.ai`

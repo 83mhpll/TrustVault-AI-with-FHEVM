@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createInstance, SepoliaConfig } from "@zama-fhe/relayer-sdk/web";
 import { useAccount, useChainId, useWalletClient, usePublicClient } from "wagmi";
 import { getAddress } from "viem";
-import type { Address } from "viem";
+import type { Address, TypedData, TypedDataDomain } from "viem";
 
 type Option = { index: number; label: string };
 
@@ -84,8 +84,9 @@ function App() {
                       };
                       const hash = await walletClient.writeContract(data);
                       setStatus(`Tx sent: ${hash}`);
-                    } catch (e: any) {
-                      setStatus(e.message || String(e));
+                    } catch (e: unknown) {
+                      const msg = e instanceof Error ? e.message : String(e);
+                      setStatus(msg);
                     }
                   }}
                 >
@@ -102,10 +103,12 @@ function App() {
             disabled={!isConnected || !canUseSepolia || !contractAddress}
             onClick={async () => {
               try {
-                setStatus("Fetching & decrypting tallies...");
+                if (!walletClient) throw new Error("No wallet client");
+                setStatus("Fetching & decrypting tallies (user decrypt)...");
                 const inst = await createInstance(SepoliaConfig);
                 const user = getAddress(address as Address);
-                // call numOptions()
+
+                // 1) Fetch handles
                 const numOptionsHex = await publicClient!.readContract({
                   abi: [
                     {
@@ -120,9 +123,9 @@ function App() {
                   functionName: "numOptions",
                 });
                 const n = Number(numOptionsHex);
-                const results: number[] = [];
+                const handles: `0x${string}`[] = [];
                 for (let i = 0; i < n; i++) {
-                  const handle = await publicClient!.readContract({
+                  const handle = (await publicClient!.readContract({
                     abi: [
                       {
                         type: "function",
@@ -135,20 +138,50 @@ function App() {
                     address: contractAddress as Address,
                     functionName: "getTally",
                     args: [i],
-                  });
-                  if (handle === "0x" + "0".repeat(64)) {
-                    results.push(0);
-                  } else {
-                    // Try public decrypt via relayer SDK
-                    const dec = await inst.publicDecrypt([handle as `0x${string}`]);
-                    const value = Number(Object.values(dec)[0] as bigint);
-                    results.push(value);
-                  }
+                  })) as `0x${string}`;
+                  handles.push(handle);
                 }
-                setTallies(results);
+
+                // 2) Generate keypair and build typed data
+                const { publicKey, privateKey } = inst.generateKeypair();
+                const start = Math.floor(Date.now() / 1000);
+                const days = 30;
+                const typed = inst.createEIP712(publicKey, [contractAddress], start, days);
+
+                // 3) Sign EIP712 with the connected wallet
+                // Types from SDK may not perfectly match viem generics, use minimal casts
+                const signature = await walletClient.signTypedData({
+                  account: user,
+                  domain: typed.domain as unknown as TypedDataDomain,
+                  types: typed.types as unknown as TypedData,
+                  primaryType: typed.primaryType as unknown as string,
+                  message: typed.message as unknown as Record<string, unknown>,
+                });
+
+                // 4) Request user decrypt from relayer
+                const pairs = handles.map((h) => ({ handle: h as string, contractAddress: contractAddress as string }));
+                const dec = await inst.userDecrypt(
+                  pairs,
+                  privateKey,
+                  publicKey,
+                  signature,
+                  [contractAddress],
+                  user,
+                  start,
+                  days,
+                );
+
+                // 5) Map results back to array order
+                const values: number[] = handles.map((h) => {
+                  const v = dec[h as string] as bigint | undefined;
+                  return v ? Number(v) : 0;
+                });
+
+                setTallies(values);
                 setStatus("Tallies updated");
-              } catch (e: any) {
-                setStatus(e.message || String(e));
+              } catch (e: unknown) {
+                const msg = e instanceof Error ? e.message : String(e);
+                setStatus(msg);
               }
             }}
           >
@@ -176,8 +209,9 @@ function App() {
                   args: [getAddress(address as Address)],
                 });
                 setStatus(`Access granted. Tx: ${hash}`);
-              } catch (e: any) {
-                setStatus(e.message || String(e));
+              } catch (e: unknown) {
+                const msg = e instanceof Error ? e.message : String(e);
+                setStatus(msg);
               }
             }}
           >
