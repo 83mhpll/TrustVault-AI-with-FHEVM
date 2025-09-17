@@ -19,7 +19,7 @@ task("rating:create", "Create a new rating item via RatingFactory")
     console.log(`Wait tx: ${tx.hash}...`);
     await tx.wait();
     const count = await ratingFactory.getItemsCount();
-    const last = await ratingFactory.getItem(Number(count) - 1n);
+    const last = await ratingFactory.getItem(Number(count) - 1);
     console.log("RatingItem:", last[0]);
   });
 
