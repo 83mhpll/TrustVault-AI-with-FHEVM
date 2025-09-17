@@ -18,7 +18,9 @@ task("rating:create", "Create a new rating item via RatingFactory")
       .createItem(String(args.name), String(args.desc), parseInt(args.min), parseInt(args.max));
     console.log(`Wait tx: ${tx.hash}...`);
     await tx.wait();
-    console.log("Created!");
+    const count = await ratingFactory.getItemsCount();
+    const last = await ratingFactory.getItem(Number(count) - 1n);
+    console.log("RatingItem:", last[0]);
   });
 
 task("rating:rate", "Rate an item 1..5")
