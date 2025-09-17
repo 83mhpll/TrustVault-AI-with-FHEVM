@@ -81,6 +81,12 @@ Open Local URL and:
 - Select 1–5 → Rate Now (wallet signs and sends on Sepolia)
 - Optional: Reveal Average later; only the aggregate is shown
 
+### Screenshots
+
+Home / Catalog (live demo render):
+
+![AI Rating Board Demo](https://s.wordpress.com/mshots/v1/https%3A%2F%2Fai-rating-board-l7cuz2n4a-83mhplls-projects.vercel.app%2F?w=1200)
+
 ### Model Catalog
 
 - Loads from `web/public/models.json` by default
