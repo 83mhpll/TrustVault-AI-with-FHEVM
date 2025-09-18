@@ -235,13 +235,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **OpenAI**: For AI integration capabilities
 - **Community**: For feedback and support
 
-## 📞 Support & Contact
-
-- **Website**: [TrustVault AI](https://trustvault-ai.vercel.app)
-- **Twitter**: [@TrustVaultAI](https://twitter.com/TrustVaultAI)
-- **GitHub**: [TrustVault-AI](https://github.com/83mhpll/TrustVault-AI)
-- **Email**: support@trustvault.ai
-
 ## 🚀 Roadmap
 
 ### Phase 1 (Current)
@@ -250,21 +243,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ✅ Model catalog
 - ✅ Basic analytics
 - ✅ Revenue model
-
-### Phase 2 (Q2 2025)
-
-- 🔄 Multi-chain support
-- 🔄 Advanced AI features
-- 🔄 Enterprise dashboard
-- 🔄 API marketplace
-
-### Phase 3 (Q3 2025)
-
-- 📋 Mobile app
-- 📋 Social features
-- 📋 Advanced analytics
-- 📋 Global expansion
-
 ---
 
 **Built with ❤️ using Zama FHEVM technology**
