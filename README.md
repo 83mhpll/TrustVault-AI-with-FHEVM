@@ -1,4 +1,4 @@
-# 🛡️ TrustVault AI - Secure Confidential Rating Platform
+# 🛡️ TrustVault AI - Enterprise-Grade Confidential AI Model Rating Platform
 
 > **The Future of Private AI Model Evaluation** - Rate AI models with complete confidentiality using Zama FHEVM
 > technology.
