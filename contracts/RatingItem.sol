@@ -12,9 +12,11 @@ contract RatingItem is SepoliaConfig {
     string public name;
     string public description;
     address public creator;
+    address public factory;
 
     uint8 public minScore;
     uint8 public maxScore;
+    uint256 public revealFee = 0.0005 ether; // 0.0005 ETH per reveal
 
     euint32 private _sum;
     euint32 private _count;
@@ -24,6 +26,7 @@ contract RatingItem is SepoliaConfig {
         name = _name;
         description = _description;
         creator = msg.sender;
+        factory = msg.sender; // Factory deploys this contract
         minScore = _min;
         maxScore = _max;
     }
@@ -54,9 +57,25 @@ contract RatingItem is SepoliaConfig {
         return _count;
     }
 
-    /// @notice Grant read permission to a reader for both sum and count
-    function allowAllTo(address reader) external {
+    /// @notice Grant read permission to a reader for both sum and count (with fee)
+    function allowAllTo(address reader) external payable {
+        require(msg.value >= revealFee, "Insufficient reveal fee");
+
         FHE.allow(_sum, reader);
         FHE.allow(_count, reader);
+
+        // Transfer fee to factory
+        if (factory != address(0)) {
+            payable(factory).transfer(msg.value);
+        }
+    }
+
+    function updateRevealFee(uint256 _revealFee) external {
+        require(msg.sender == factory, "Only factory can update fee");
+        revealFee = _revealFee;
+    }
+
+    function getContractBalance() external view returns (uint256) {
+        return address(this).balance;
     }
 }

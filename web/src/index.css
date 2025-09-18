@@ -5,9 +5,25 @@
   --muted: #9aa4b2;
   --yellow: #ffcc00;
   --yellow-600: #f2b705;
+  --yellow-500: #ffd400;
+  --yellow-700: #d4a800;
   --surface: #191c20;
   --border: #313641; /* softened border for better contrast with yellow */
   --success: #3fb950;
+  /* Type scale */
+  --font-3xl: 40px;
+  --font-2xl: 28px;
+  --font-xl: 22px;
+  --font-lg: 18px;
+  --font-md: 15px;
+  --font-sm: 13px;
+  --font-xs: 11px;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.02em;
   font-family:
     Inter,
     ui-sans-serif,
@@ -25,6 +41,12 @@
   background-color: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 a {
@@ -54,17 +76,78 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid #e6bf00;
   padding: 0.6em 1.2em;
   font-size: 0.95rem;
-  font-weight: 600;
-  background-color: var(--yellow);
+  font-weight: 700;
+  background: linear-gradient(180deg, #ffe066, var(--yellow));
   color: #000;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.18);
 }
 button:hover {
-  background-color: var(--yellow-600);
+  background: linear-gradient(180deg, #ffdf57, var(--yellow-600));
+  box-shadow: 0 8px 24px rgba(255, 204, 0, 0.28);
+}
+
+/* === AI Galaxy Theme Background === */
+:root {
+  --galaxy-bg: #0a0c12;
+  --galaxy-purple: #2c1858;
+  --galaxy-pink: #5a1351;
+  --galaxy-blue: #0d2c4a;
+}
+
+/* Override base background with galaxy layers */
+body {
+  background-color: var(--galaxy-bg);
+  background-image: radial-gradient(1000px 550px at 40% 0%, rgba(110, 140, 255, 0.12), transparent 70%);
+  background-attachment: fixed;
+}
+
+/* Nebula haze */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -12% -8% -12% -8%;
+  background:
+    radial-gradient(900px 520px at 8% -6%, rgba(90, 19, 81, 0.42), transparent 65%),
+    radial-gradient(780px 420px at 85% 0%, rgba(44, 24, 88, 0.36), transparent 70%),
+    radial-gradient(700px 400px at 50% 120%, rgba(13, 44, 74, 0.35), transparent 70%);
+  filter: blur(24px);
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Starfield */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 25% 20%, rgba(255, 255, 255, 0.45), transparent 55%),
+    radial-gradient(1px 1px at 60% 80%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(1px 1px at 80% 30%, rgba(255, 255, 255, 0.4), transparent 55%),
+    radial-gradient(2px 2px at 90% 60%, rgba(255, 255, 255, 0.22), transparent 60%);
+  background-size:
+    220px 220px,
+    260px 260px,
+    180px 180px,
+    320px 320px;
+  background-repeat: repeat;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Micro-interaction */
+button:active {
+  transform: translateY(1px) scale(0.99);
 }
 
 .btn-secondary {
@@ -102,7 +185,7 @@ button:hover {
   border-color: var(--yellow);
   color: var(--yellow);
 }
-อ้งinput,
+input,
 textarea {
   width: 100%;
   background: #0f1216;
@@ -110,6 +193,17 @@ textarea {
   color: var(--text);
   border-radius: 8px;
   padding: 10px 12px;
+}
+/* Inputs polish */
+input::placeholder,
+.search::placeholder {
+  color: #7f8895;
+}
+input:focus,
+.search:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.12);
+  outline: none;
 }
 label {
   display: block;
@@ -151,6 +245,8 @@ label {
   gap: 4px;
   padding: 6px;
   z-index: 20;
+  max-height: 220px;
+  overflow: auto;
 }
 .combo .suggest button {
   background: transparent;
@@ -160,6 +256,13 @@ label {
 }
 .combo .suggest button:hover {
   border-color: var(--yellow);
+}
+/* Form UX accents */
+.form-row:focus-within label {
+  color: var(--yellow);
+}
+.form-actions {
+  flex-wrap: wrap;
 }
 button:focus,
 button:focus-visible {
