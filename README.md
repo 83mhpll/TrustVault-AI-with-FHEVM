@@ -3,7 +3,7 @@
 > **The Future of Private AI Model Evaluation** - Rate AI models with complete confidentiality using Zama FHEVM
 > technology.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](http://localhost:5175/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://ai-rating-board-l7cuz2n4a-83mhplls-projects.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
@@ -26,7 +26,7 @@ stored on-chain.
 
 ## 🚀 Live Demo
 
-**Experience TrustVault AI now**: [http://localhost:5175/](http://localhost:5175/)
+**Experience TrustVault AI now**: [https://ai-rating-board-l7cuz2n4a-83mhplls-projects.vercel.app](https://ai-rating-board-l7cuz2n4a-83mhplls-projects.vercel.app)
 
 ### 🎯 Quick Start Guide
 
