@@ -26,7 +26,8 @@ stored on-chain.
 
 ## 🚀 Live Demo
 
-**Experience TrustVault AI now**: [https://trustvault-ai-competition-ne4fajbht-83mhplls-projects.vercel.app](https://trustvault-ai-competition-ne4fajbht-83mhplls-projects.vercel.app)
+**Experience TrustVault AI now**:
+[https://trustvault-ai-competition-ne4fajbht-83mhplls-projects.vercel.app](https://trustvault-ai-competition-ne4fajbht-83mhplls-projects.vercel.app)
 
 ### 🎯 Quick Start Guide
 
