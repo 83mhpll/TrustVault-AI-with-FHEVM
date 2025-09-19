@@ -50,7 +50,6 @@ stored on-chain.
 - **Frontend**: React + Vite + TypeScript
 - **Blockchain**: Ethereum Sepolia + Zama FHEVM
 - **Wallet**: RainbowKit + Wagmi
-- **Styling**: Custom CSS with Zama theme
 - **AI Integration**: OpenAI GPT-4 API
 - **Deployment**: Vercel
 
@@ -71,7 +70,7 @@ TrustVault AI operates on a sustainable revenue model:
 2. **Enterprise AI Teams**: Internal model assessment
 3. **Academic Institutions**: Research and benchmarking
 4. **AI Model Developers**: Community feedback collection
-5. **Data Privacy-Conscious Users**: Secure rating platform
+5. **Data Privacy-Conscious Users**: Secure platform
 
 ## 🛠️ Development Setup
 
