@@ -136,19 +136,40 @@ npm run vercel-build       # Build for Vercel deployment
 
 ## 🔒 Privacy & Security
 
-### Encryption Details
+### 🛡️ **Complete Privacy Protection**
+
+**We CANNOT access your private information:**
+- ❌ **Seed Phrase** - Your wallet recovery phrase
+- ❌ **Private Key** - Your wallet's private key
+- ❌ **Password** - Your wallet password
+- ❌ **Individual Ratings** - Your specific ratings are encrypted
+
+**We CAN only see public information:**
+- ✅ **Public Address** - Your wallet's public address
+- ✅ **Transaction History** - Public blockchain transactions
+- ✅ **Aggregated Statistics** - Combined, anonymous data
+
+### 🔐 **FHEVM Encryption Details**
 
 - **Individual Ratings**: Encrypted using `euint32` FHE types
 - **Storage**: Only encrypted sum and count stored on-chain
 - **Decryption**: Client-side via Zama Relayer (EIP-712)
 - **Access Control**: FHE ACL for ciphertext protection
+- **Zero-Knowledge Processing**: We process data without seeing it
 
-### Privacy Guarantees
+### 🎯 **Privacy Guarantees**
 
 - ✅ Individual ratings never exposed
 - ✅ Only aggregated averages can be revealed
 - ✅ User controls their own decryption
 - ✅ No central authority can access individual votes
+- ✅ **We cannot access your private keys or seed phrases**
+- ✅ **Your data is encrypted before leaving your device**
+- ✅ **Complete privacy protection with FHEVM technology**
+
+### 🚨 **Why This Matters**
+
+Traditional platforms can access your private data, but **TrustVault AI cannot** - it's technically impossible with our FHEVM architecture.
 
 ## 🤖 AI Integration
 

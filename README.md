@@ -13,6 +13,17 @@ TrustVault AI is a revolutionary **confidential rating platform** that allows us
 privacy. Built on Zama FHEVM technology, your individual ratings are never exposed - only encrypted aggregates are
 stored on-chain.
 
+### 🛡️ **Why Choose TrustVault AI?**
+
+**Unlike traditional platforms, we CANNOT access your private information:**
+
+- ❌ **Cannot see your seed phrase or private keys**
+- ❌ **Cannot track your personal behavior**
+- ❌ **Cannot sell your private data**
+- ❌ **Cannot compromise your privacy**
+
+**This makes TrustVault AI the most secure choice for AI model evaluation.**
+
 ### ✨ Key Features
 
 - 🔐 **Complete Privacy**: Individual ratings are encrypted and never revealed
@@ -151,19 +162,49 @@ npm run build
 
 ## 🔒 Privacy & Security
 
-### Encryption Details
+### 🛡️ **Why TrustVault AI is the Most Secure Choice**
+
+**We CANNOT see your private information:**
+
+- ❌ **Seed Phrase** - Your wallet recovery phrase
+- ❌ **Private Key** - Your wallet's private key
+- ❌ **Password** - Your wallet password
+- ❌ **Individual Ratings** - Your specific ratings are encrypted
+
+**We CAN only see public information:**
+
+- ✅ **Public Address** - Your wallet's public address
+- ✅ **Transaction History** - Public blockchain transactions
+- ✅ **Aggregated Statistics** - Combined, anonymous data
+
+### 🔐 **FHEVM Privacy Protection**
 
 - **Individual Ratings**: Encrypted using `euint32` FHE types
 - **Storage**: Only encrypted sum and count stored on-chain
 - **Decryption**: Client-side via Zama Relayer (EIP-712)
 - **Access Control**: FHE ACL for ciphertext protection
+- **Zero-Knowledge Processing**: We process data without seeing it
 
-### Privacy Guarantees
+### 🎯 **Privacy Guarantees**
 
 - ✅ Individual ratings never exposed
 - ✅ Only aggregated averages can be revealed
 - ✅ User controls their own decryption
 - ✅ No central authority can access individual votes
+- ✅ **We cannot access your private keys or seed phrases**
+- ✅ **Your data is encrypted before leaving your device**
+- ✅ **Complete privacy protection with FHEVM technology**
+
+### 🚨 **Why This Matters**
+
+Traditional platforms can:
+
+- 🔴 Access your private data
+- 🔴 Track your behavior
+- 🔴 Sell your information
+- 🔴 Compromise your privacy
+
+**TrustVault AI cannot do any of these things** - it's technically impossible with our FHEVM architecture.
 
 ## 📊 Features Overview
 
@@ -272,6 +313,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [API Documentation](API-DOCUMENTATION.md)
 - [Deployment Guide](DEPLOYMENT-GUIDE.md)
 - [Troubleshooting Guide](TROUBLESHOOTING-GUIDE.md)
+- [Privacy & Security Guide](PRIVACY-SECURITY-GUIDE.md)
 
 ## 🔧 Deployment
 
