@@ -924,8 +924,23 @@ function App() {
                   whiteSpace: "nowrap",
                   minWidth: "60px",
                   textAlign: "center",
+                  background: showInsights ? "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" : "transparent",
+                  color: showInsights ? "white" : "var(--yellow-600)",
+                  border: showInsights ? "2px solid #d97706" : "2px solid var(--yellow-300)",
+                  transform: showInsights ? "scale(1.05)" : "scale(1)",
+                  boxShadow: showInsights ? "0 4px 12px rgba(245, 158, 11, 0.3)" : "0 2px 4px rgba(245, 158, 11, 0.1)",
                 }}
-                onClick={() => setShowInsights(!showInsights)}
+                onClick={() => {
+                  setShowInsights(!showInsights);
+                  if (!showInsights) {
+                    setTimeout(() => {
+                      const element = document.getElementById("insights-section");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }, 100);
+                  }
+                }}
               >
                 📊 API
               </button>
@@ -940,8 +955,25 @@ function App() {
                   whiteSpace: "nowrap",
                   minWidth: "60px",
                   textAlign: "center",
+                  background: showAiFeatures ? "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)" : "transparent",
+                  color: showAiFeatures ? "white" : "var(--yellow-600)",
+                  border: showAiFeatures ? "2px solid #d97706" : "2px solid var(--yellow-300)",
+                  transform: showAiFeatures ? "scale(1.05)" : "scale(1)",
+                  boxShadow: showAiFeatures
+                    ? "0 4px 12px rgba(245, 158, 11, 0.3)"
+                    : "0 2px 4px rgba(245, 158, 11, 0.1)",
                 }}
-                onClick={() => setShowAiFeatures(!showAiFeatures)}
+                onClick={() => {
+                  setShowAiFeatures(!showAiFeatures);
+                  if (!showAiFeatures) {
+                    setTimeout(() => {
+                      const element = document.getElementById("ai-features-section");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }, 100);
+                  }
+                }}
               >
                 🤖 AI
               </button>
@@ -956,8 +988,27 @@ function App() {
                   whiteSpace: "nowrap",
                   minWidth: "60px",
                   textAlign: "center",
+                  background: showBusinessSolutions
+                    ? "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+                    : "transparent",
+                  color: showBusinessSolutions ? "white" : "var(--yellow-600)",
+                  border: showBusinessSolutions ? "2px solid #d97706" : "2px solid var(--yellow-300)",
+                  transform: showBusinessSolutions ? "scale(1.05)" : "scale(1)",
+                  boxShadow: showBusinessSolutions
+                    ? "0 4px 12px rgba(245, 158, 11, 0.3)"
+                    : "0 2px 4px rgba(245, 158, 11, 0.1)",
                 }}
-                onClick={() => setShowBusinessSolutions(!showBusinessSolutions)}
+                onClick={() => {
+                  setShowBusinessSolutions(!showBusinessSolutions);
+                  if (!showBusinessSolutions) {
+                    setTimeout(() => {
+                      const element = document.getElementById("business-solutions-section");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }, 100);
+                  }
+                }}
               >
                 🏢 Business
               </button>
@@ -2605,7 +2656,7 @@ function App() {
 
           {/* Insights & API Section */}
           {showInsights && (
-            <div className="card" style={{ marginTop: 24 }}>
+            <div id="insights-section" className="card" style={{ marginTop: 24 }}>
               <div className="card-header">
                 <div
                   style={{
@@ -2625,12 +2676,11 @@ function App() {
               </div>
 
               <div
-                className="insights-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
-                  gap: 24,
-                  marginBottom: 24,
+                  gap: 20,
+                  marginTop: 16,
                 }}
               >
                 {/* Left Column */}
@@ -2638,22 +2688,23 @@ function App() {
                   {/* Analytics Section */}
                   <div
                     style={{
-                      background: "linear-gradient(135deg, var(--yellow-50) 0%, var(--yellow-100) 100%)",
+                      background: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)",
                       padding: 20,
                       borderRadius: 12,
-                      border: "2px solid var(--yellow-200)",
-                      boxShadow: "0 4px 12px rgba(251, 191, 36, 0.15)",
+                      border: "2px solid #f59e0b",
+                      boxShadow: "0 4px 12px rgba(245, 158, 11, 0.2)",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: 16,
-                        fontWeight: 700,
-                        marginBottom: 12,
-                        color: "var(--yellow-800)",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 8,
+                        fontSize: 18,
+                        fontWeight: 800,
+                        marginBottom: 16,
+                        background: "linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                        textShadow: "0 2px 4px rgba(245, 158, 11, 0.3)",
                       }}
                     >
                       📈 Available Analytics
@@ -2725,14 +2776,25 @@ function App() {
                   {/* API Endpoint */}
                   <div
                     style={{
-                      background: "linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%)",
+                      background: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)",
                       padding: 20,
                       borderRadius: 12,
-                      border: "1px solid var(--gray-300)",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                      border: "2px solid #f59e0b",
+                      boxShadow: "0 4px 12px rgba(245, 158, 11, 0.2)",
                     }}
                   >
-                    <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 12, color: "var(--gray-800)" }}>
+                    <div
+                      style={{
+                        fontSize: 18,
+                        fontWeight: 800,
+                        marginBottom: 16,
+                        background: "linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                        textShadow: "0 2px 4px rgba(245, 158, 11, 0.3)",
+                      }}
+                    >
                       🌐 API Endpoint
                     </div>
                     <div style={{ fontSize: 12, color: "var(--gray-700)", lineHeight: 1.6 }}>
@@ -2773,22 +2835,23 @@ function App() {
                   {/* Pricing Plans */}
                   <div
                     style={{
-                      background: "linear-gradient(135deg, var(--yellow-50) 0%, var(--yellow-100) 100%)",
+                      background: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)",
                       padding: 20,
                       borderRadius: 12,
-                      border: "2px solid var(--yellow-200)",
-                      boxShadow: "0 4px 12px rgba(251, 191, 36, 0.15)",
+                      border: "2px solid #f59e0b",
+                      boxShadow: "0 4px 12px rgba(245, 158, 11, 0.2)",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: 16,
-                        fontWeight: 700,
+                        fontSize: 18,
+                        fontWeight: 800,
                         marginBottom: 16,
-                        color: "var(--yellow-800)",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 8,
+                        background: "linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                        textShadow: "0 2px 4px rgba(245, 158, 11, 0.3)",
                       }}
                     >
                       💰 Pricing Plans
@@ -3359,7 +3422,7 @@ function App() {
 
         {/* AI Features Section */}
         {showAiFeatures && (
-          <div className="card" style={{ marginTop: 24 }}>
+          <div id="ai-features-section" className="card" style={{ marginTop: 24 }}>
             <div className="card-header">
               <div
                 style={{
@@ -3599,7 +3662,7 @@ function App() {
 
         {/* AI Business Solutions Section */}
         {showBusinessSolutions && (
-          <div className="card" style={{ marginTop: 24 }}>
+          <div id="business-solutions-section" className="card" style={{ marginTop: 24 }}>
             <div className="card-header">
               <div
                 style={{
