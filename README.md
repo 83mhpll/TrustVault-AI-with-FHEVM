@@ -4,6 +4,7 @@
 > technology.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
@@ -38,6 +39,7 @@ stored on-chain.
 ## 🚀 Live Demo
 
 **Experience TrustVault AI now**: [https://trustvault-ai-demo.vercel.app](https://trustvault-ai-demo.vercel.app)
+**Experience TrustVault AI now**: [https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 
 ### 🎯 Quick Start Guide
 
@@ -256,14 +258,6 @@ TrustVault AI is fully responsive and optimized for:
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -347,12 +341,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
 - **Documentation**: Check the documentation files above
-- **Community**: Join our Discord for support
-- **Email**: support@trustvault.ai
 - **Website**: [trustvault.ai](https://trustvault.ai)
 
----
 
-**Built with ❤️ using Zama FHEVM technology**
+**Built with using Zama FHEVM technology**
 
 _TrustVault AI - Where Privacy Meets Innovation_
