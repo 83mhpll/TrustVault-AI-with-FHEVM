@@ -3,7 +3,7 @@
 > **The Future of Private AI Model Evaluation** - Rate AI models with complete confidentiality using Zama FHEVM
 > technology.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
@@ -26,7 +26,7 @@ stored on-chain.
 
 ## 🚀 Live Demo
 
-**Experience TrustVault AI now**: [https://trustvault-ai.vercel.app](https://trustvault-ai.vercel.app)
+**Experience TrustVault AI now**: [https://trustvault-ai-demo.vercel.app](https://trustvault-ai-demo.vercel.app)
 
 ### 🎯 Quick Start Guide
 
@@ -242,6 +242,73 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ✅ Model catalog
 - ✅ Basic analytics
 - ✅ Revenue model
+- ✅ AI Analytics API Marketplace
+- ✅ UI/UX improvements
+- ✅ Documentation updates
+
+### Phase 2 (Next)
+
+- 🔄 Enterprise Dashboard
+- 🔄 Mobile App
+- 🔄 API Marketplace
+- 🔄 Certification System
+- 🔄 Advanced AI Features
+
+## 📚 Documentation
+
+### Business Plans
+
+- [AI Analytics API Marketplace Plan](AI-ANALYTICS-MARKETPLACE-PLAN.md)
+- [Executive Summary](AI-ANALYTICS-MARKETPLACE-EXECUTIVE-SUMMARY.md)
+- [Technical Specifications](AI-ANALYTICS-MARKETPLACE-TECHNICAL-SPEC.md)
+- [Development Roadmap](AI-ANALYTICS-MARKETPLACE-ROADMAP.md)
+- [Investor Presentation](AI-ANALYTICS-MARKETPLACE-PRESENTATION.md)
+
+### Technical Documentation
+
+- [AI-FHEVM Integration Guide](AI-FHEVM-INTEGRATION.md)
+- [Business Solutions](AI-BUSINESS-SOLUTIONS.md)
+- [Business Plan](BUSINESS-PLAN.md)
+- [API Documentation](API-DOCUMENTATION.md)
+- [Deployment Guide](DEPLOYMENT-GUIDE.md)
+- [Troubleshooting Guide](TROUBLESHOOTING-GUIDE.md)
+
+## 🔧 Deployment
+
+### Vercel Deployment
+
+1. **Connect Repository**: Link your GitHub repository to Vercel
+2. **Configure Build Settings**:
+   - Build Command: `cd web && npm run build`
+   - Output Directory: `web/dist`
+3. **Set Environment Variables**:
+   - `VITE_PRIVATE_VOTE_ADDRESS`: Your deployed contract address
+   - `VITE_OPENAI_API_KEY`: Your OpenAI API key (optional)
+4. **Deploy**: Automatic deployment on git push
+
+### Access Control
+
+- **Public Access**: Ensure your Vercel project is set to public
+- **OIDC Federation**: Disable if you want public access
+- **Password Protection**: Disable for public access
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+1. **Access Denied**: Check Vercel project settings for public access
+2. **Wallet Connection**: Ensure MetaMask is connected to Sepolia testnet
+3. **Contract Errors**: Verify contract addresses in environment variables
+4. **AI Features**: Check OpenAI API key configuration
+
+### Support
+
+- **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
+- **Documentation**: Check the documentation files above
+- **Community**: Join our Discord for support
+- **Email**: support@trustvault.ai
+- **Website**: [trustvault.ai](https://trustvault.ai)
+
 ---
 
 **Built with ❤️ using Zama FHEVM technology**

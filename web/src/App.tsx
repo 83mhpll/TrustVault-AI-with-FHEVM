@@ -2660,17 +2660,16 @@ function App() {
               <div className="card-header">
                 <div
                   style={{
-                    fontWeight: 900,
-                    fontSize: 22,
-                    background: "linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    textShadow: "0 4px 8px rgba(245, 158, 11, 0.4)",
-                    letterSpacing: "0.5px",
+                    fontWeight: 700,
+                    fontSize: 20,
+                    color: "#1f2937",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
                   }}
                 >
-                  📊 Insights & Analytics API
+                  <span style={{ fontSize: 24 }}>📊</span>
+                  Insights & Analytics API
                 </div>
                 <div className="pill">Pro</div>
               </div>
