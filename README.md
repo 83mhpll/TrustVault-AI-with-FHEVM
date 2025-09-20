@@ -3,6 +3,7 @@
 > **The Future of Private AI Model Evaluation** - Rate AI models with complete confidentiality using Zama FHEVM
 > technology.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo.vercel.app)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
@@ -12,6 +13,17 @@
 TrustVault AI is a revolutionary **confidential rating platform** that allows users to evaluate AI models with complete
 privacy. Built on Zama FHEVM technology, your individual ratings are never exposed - only encrypted aggregates are
 stored on-chain.
+
+### 🛡️ **Why Choose TrustVault AI?**
+
+**Unlike traditional platforms, we CANNOT access your private information:**
+
+- ❌ **Cannot see your seed phrase or private keys**
+- ❌ **Cannot track your personal behavior**
+- ❌ **Cannot sell your private data**
+- ❌ **Cannot compromise your privacy**
+
+**This makes TrustVault AI the most secure choice for AI model evaluation.**
 
 ### ✨ Key Features
 
@@ -26,6 +38,7 @@ stored on-chain.
 
 ## 🚀 Live Demo
 
+**Experience TrustVault AI now**: [https://trustvault-ai-demo.vercel.app](https://trustvault-ai-demo.vercel.app)
 **Experience TrustVault AI now**: [https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 
 ### 🎯 Quick Start Guide
@@ -151,19 +164,49 @@ npm run build
 
 ## 🔒 Privacy & Security
 
-### Encryption Details
+### 🛡️ **Why TrustVault AI is the Most Secure Choice**
+
+**We CANNOT see your private information:**
+
+- ❌ **Seed Phrase** - Your wallet recovery phrase
+- ❌ **Private Key** - Your wallet's private key
+- ❌ **Password** - Your wallet password
+- ❌ **Individual Ratings** - Your specific ratings are encrypted
+
+**We CAN only see public information:**
+
+- ✅ **Public Address** - Your wallet's public address
+- ✅ **Transaction History** - Public blockchain transactions
+- ✅ **Aggregated Statistics** - Combined, anonymous data
+
+### 🔐 **FHEVM Privacy Protection**
 
 - **Individual Ratings**: Encrypted using `euint32` FHE types
 - **Storage**: Only encrypted sum and count stored on-chain
 - **Decryption**: Client-side via Zama Relayer (EIP-712)
 - **Access Control**: FHE ACL for ciphertext protection
+- **Zero-Knowledge Processing**: We process data without seeing it
 
-### Privacy Guarantees
+### 🎯 **Privacy Guarantees**
 
 - ✅ Individual ratings never exposed
 - ✅ Only aggregated averages can be revealed
 - ✅ User controls their own decryption
 - ✅ No central authority can access individual votes
+- ✅ **We cannot access your private keys or seed phrases**
+- ✅ **Your data is encrypted before leaving your device**
+- ✅ **Complete privacy protection with FHEVM technology**
+
+### 🚨 **Why This Matters**
+
+Traditional platforms can:
+
+- 🔴 Access your private data
+- 🔴 Track your behavior
+- 🔴 Sell your information
+- 🔴 Compromise your privacy
+
+**TrustVault AI cannot do any of these things** - it's technically impossible with our FHEVM architecture.
 
 ## 📊 Features Overview
 
@@ -234,6 +277,72 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ✅ Model catalog
 - ✅ Basic analytics
 - ✅ Revenue model
+- ✅ AI Analytics API Marketplace
+- ✅ UI/UX improvements
+- ✅ Documentation updates
+
+### Phase 2 (Next)
+
+- 🔄 Enterprise Dashboard
+- 🔄 Mobile App
+- 🔄 API Marketplace
+- 🔄 Certification System
+- 🔄 Advanced AI Features
+
+## 📚 Documentation
+
+### Business Plans
+
+- [AI Analytics API Marketplace Plan](AI-ANALYTICS-MARKETPLACE-PLAN.md)
+- [Executive Summary](AI-ANALYTICS-MARKETPLACE-EXECUTIVE-SUMMARY.md)
+- [Technical Specifications](AI-ANALYTICS-MARKETPLACE-TECHNICAL-SPEC.md)
+- [Development Roadmap](AI-ANALYTICS-MARKETPLACE-ROADMAP.md)
+- [Investor Presentation](AI-ANALYTICS-MARKETPLACE-PRESENTATION.md)
+
+### Technical Documentation
+
+- [AI-FHEVM Integration Guide](AI-FHEVM-INTEGRATION.md)
+- [Business Solutions](AI-BUSINESS-SOLUTIONS.md)
+- [Business Plan](BUSINESS-PLAN.md)
+- [API Documentation](API-DOCUMENTATION.md)
+- [Deployment Guide](DEPLOYMENT-GUIDE.md)
+- [Troubleshooting Guide](TROUBLESHOOTING-GUIDE.md)
+- [Privacy & Security Guide](PRIVACY-SECURITY-GUIDE.md)
+
+## 🔧 Deployment
+
+### Vercel Deployment
+
+1. **Connect Repository**: Link your GitHub repository to Vercel
+2. **Configure Build Settings**:
+   - Build Command: `cd web && npm run build`
+   - Output Directory: `web/dist`
+3. **Set Environment Variables**:
+   - `VITE_PRIVATE_VOTE_ADDRESS`: Your deployed contract address
+   - `VITE_OPENAI_API_KEY`: Your OpenAI API key (optional)
+4. **Deploy**: Automatic deployment on git push
+
+### Access Control
+
+- **Public Access**: Ensure your Vercel project is set to public
+- **OIDC Federation**: Disable if you want public access
+- **Password Protection**: Disable for public access
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+1. **Access Denied**: Check Vercel project settings for public access
+2. **Wallet Connection**: Ensure MetaMask is connected to Sepolia testnet
+3. **Contract Errors**: Verify contract addresses in environment variables
+4. **AI Features**: Check OpenAI API key configuration
+
+### Support
+
+- **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
+- **Documentation**: Check the documentation files above
+- **Website**: [trustvault.ai](https://trustvault.ai)
+
 
 **Built with using Zama FHEVM technology**
 

@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "builds": [{ "src": "web/package.json", "use": "@vercel/static-build" }],
+  "public": true,
+  "access": "public"
   "builds": [
     {
       "src": "web/package.json",
