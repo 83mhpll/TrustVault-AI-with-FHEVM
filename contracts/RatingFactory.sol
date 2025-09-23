@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 import {RatingItem} from "./RatingItem.sol";
@@ -17,8 +16,8 @@ contract RatingFactory {
     ItemMeta[] private _items;
 
     address public owner;
-    uint256 public creationFee = 0.001 ether; // 0.001 ETH per item creation
-    uint256 public promoteFee = 0.01 ether; // 0.01 ETH for 7 days promotion
+    uint256 public creationFee = 0.001 ether;
+    uint256 public promoteFee = 0.01 ether;
     uint256 public promoteDuration = 7 days;
 
     mapping(address => bool) public promotedItems;

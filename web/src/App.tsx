@@ -21,7 +21,6 @@ function App() {
   const { data: walletClient } = useWalletClient();
   const publicClient = usePublicClient();
 
-  // Rating item contract address and factory contract for creating new items
   const [ratingItemAddress, setRatingItemAddress] = useState<string>(CONTRACT_ADDRESS_ENV || "");
   const [factoryAddress, setFactoryAddress] = useState<string>(FACTORY_ADDRESS_ENV || "");
   const [options] = useState<Option[]>([
@@ -59,8 +58,6 @@ function App() {
   useEffect(() => {
     setLbData(mockSeries);
   }, [mockSeries]);
-  // day labels reserved for future time-series chart
-  // optional lists removed for now
   type CatalogModel = { name: string; tags?: string[]; url?: string; address?: string };
   const MODELS_URL = (import.meta.env.VITE_MODELS_URL as string | undefined) || "/models.json";
   const [catalog, setCatalog] = useState<CatalogModel[]>([]);
@@ -72,7 +69,6 @@ function App() {
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
   const [debouncedQuery, setDebouncedQuery] = useState<string>("");
 
-  // AI Integration States
   const [aiAnalysis, setAiAnalysis] = useState<string>("");
   const [aiInsights, setAiInsights] = useState<{
     model: string;
@@ -92,7 +88,6 @@ function App() {
   const [aiRevenue, setAiRevenue] = useState<number>(0);
   const [aiUsage, setAiUsage] = useState<number>(0);
 
-  // AI Business Solutions States
   const [showBusinessSolutions, setShowBusinessSolutions] = useState<boolean>(false);
   const [businessAnalytics, setBusinessAnalytics] = useState<{
     type: string;
@@ -122,12 +117,10 @@ function App() {
   const [sortBy, setSortBy] = useState<string>("name");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  // Error handling states
   const [error, setError] = useState<string | null>(null);
   const [errorType, setErrorType] = useState<"network" | "wallet" | "contract" | "validation" | "general">("general");
   const [showError, setShowError] = useState<boolean>(false);
 
-  // Error handling functions
   const handleError = useCallback(
     (error: unknown, type: "network" | "wallet" | "contract" | "validation" | "general" = "general") => {
       console.error("Error:", error);
@@ -172,7 +165,6 @@ function App() {
       setShowError(true);
       setToast(`❌ ${errorMessage}`);
 
-      // Auto-hide error after 5 seconds
       setTimeout(() => {
         setShowError(false);
         setError(null);
@@ -225,7 +217,6 @@ function App() {
     const q = debouncedQuery.toLowerCase().trim();
     let base = catalog;
 
-    // Enhanced search - search multiple fields
     if (q) {
       base = catalog.filter((m) => {
         const nameMatch = m.name.toLowerCase().includes(q);
@@ -236,27 +227,21 @@ function App() {
       });
     }
 
-    // Advanced filters
-    // Category filter
     if (selectedCategory !== "all") {
       base = base.filter((m) => m.tags?.some((tag) => tag.toLowerCase() === selectedCategory.toLowerCase()));
     }
 
-    // Rating range filter (mock data for demo) - only apply if not default range
     if (minRating > 0 || maxRating < 5) {
       base = base.filter((m) => {
-        // Use a deterministic "rating" based on model name for consistent results
         const mockRating = (m.name.length % 5) + 1; // Mock rating 1-5 based on name length
         return mockRating >= minRating && mockRating <= maxRating;
       });
     }
 
-    // If no results and there's a query, return empty array
     if (q && base.length === 0) {
       return [];
     }
 
-    // Sort based on tab and advanced sort
     const score = (name: string) => name.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
 
     if (sortBy === "name") {
@@ -274,7 +259,6 @@ function App() {
         return popularityB - popularityA; // High to low
       });
     } else {
-      // Default tab-based sorting
       if (catalogTab === "trending") base = base.sort((a, b) => (score(b.name) % 97) - (score(a.name) % 97));
       if (catalogTab === "top") base = base.sort((a, b) => a.name.localeCompare(b.name));
       if (catalogTab === "most") base = base.sort((a, b) => (score(b.name) % 137) - (score(a.name) % 137));
@@ -288,7 +272,6 @@ function App() {
     return catalog.filter((m) => m.name.toLowerCase().includes(q)).slice(0, 6);
   }, [catalog, rateQuery]);
 
-  // Generate search suggestions
   const generateSuggestions = useCallback(
     (query: string) => {
       if (query.length < 2) {
@@ -309,7 +292,6 @@ function App() {
     [catalog],
   );
 
-  // Track search history
   const trackSearch = useCallback(
     (query: string) => {
       if (query.trim() && !searchHistory.includes(query)) {
@@ -319,7 +301,6 @@ function App() {
     [searchHistory],
   );
 
-  // Handle search input change
   const handleSearchChange = useCallback(
     (value: string) => {
       setCatalogQuery(value);
@@ -329,7 +310,6 @@ function App() {
     [generateSuggestions],
   );
 
-  // Handle search suggestion click
   const handleSuggestionClick = useCallback(
     (suggestion: string) => {
       setCatalogQuery(suggestion);
@@ -339,7 +319,6 @@ function App() {
     [trackSearch],
   );
 
-  // Debounced search for better performance
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(catalogQuery);
@@ -348,7 +327,6 @@ function App() {
     return () => clearTimeout(timer);
   }, [catalogQuery]);
 
-  // AI Analysis Functions
   const analyzeRatingsWithAI = useCallback(
     async (modelName: string, ratings: number[]) => {
       if (!aiApiKey) {
@@ -409,7 +387,6 @@ function App() {
           ratings: ratings.length,
         });
 
-        // Track revenue and usage
         setAiRevenue((prev) => prev + 0.1);
         setAiUsage((prev) => prev + 1);
 
@@ -478,7 +455,6 @@ function App() {
     }
   }, [aiApiKey, handleError]);
 
-  // AI Business Solutions Functions
   const processSecureData = useCallback(
     async (dataType: string) => {
       if (!aiApiKey) {
@@ -538,7 +514,6 @@ function App() {
           privacyLevel: "FHEVM Encrypted",
         });
 
-        // Track revenue
         setAiRevenue((prev) => prev + 0.25);
         setAiUsage((prev) => prev + 1);
 
@@ -616,7 +591,6 @@ function App() {
         },
       ]);
 
-      // Track revenue
       setAiRevenue((prev) => prev + 0.5);
       setAiUsage((prev) => prev + 1);
 
@@ -694,7 +668,6 @@ function App() {
         dataSource: "Encrypted Customer Data",
       });
 
-      // Track revenue
       setAiRevenue((prev) => prev + 0.75);
       setAiUsage((prev) => prev + 1);
 
@@ -727,17 +700,14 @@ function App() {
       const v = localStorage.getItem(key);
       setHasGranted(v === "1");
     } catch {
-      // ignore
     }
   }, [address, ratingItemAddress, chainId]);
 
-  // Load fees and promoted items from factory
   useEffect(() => {
     const loadFactoryData = async () => {
       if (!factoryAddress || !publicClient) return;
 
       try {
-        // Load fees
         const [creationFeeResult, promoteFeeResult] = await Promise.all([
           publicClient.readContract({
             address: factoryAddress as Address,
@@ -770,22 +740,7 @@ function App() {
         setCreationFee((Number(creationFeeResult) / 1e18).toFixed(3));
         setPromoteFee((Number(promoteFeeResult) / 1e18).toFixed(3));
 
-        // Load promoted items (commented out for now)
-        // const promotedResult = await publicClient.readContract({
-        //   address: factoryAddress as Address,
-        //   abi: [
-        //     {
-        //       name: "getPromotedItems",
-        //       type: "function",
-        //       stateMutability: "view",
-        //       inputs: [],
-        //       outputs: [{ name: "", type: "address[]" }],
-        //     },
-        //   ],
-        //   functionName: "getPromotedItems",
-        // });
 
-        // setPromotedItems(promotedResult as string[]);
       } catch (e) {
         console.warn("Failed to load factory data:", e);
       }
@@ -1674,7 +1629,6 @@ function App() {
 
             <div className="catalog-grid">
               {isLoading ? (
-                // Skeleton Loading UI
                 Array.from({ length: 6 }).map((_, i) => (
                   <div
                     key={i}
@@ -1818,7 +1772,6 @@ function App() {
                               height: "auto",
                             }}
                             onClick={() => {
-                              // Simulate ratings for demo
                               const mockRatings = [4, 5, 3, 4, 5, 4, 3, 5, 4, 4];
                               analyzeRatingsWithAI(m.name, mockRatings);
                             }}
@@ -1841,7 +1794,6 @@ function App() {
                               try {
                                 if (!walletClient || !factoryAddress) return;
 
-                                // Find item ID in factory
                                 if (!publicClient) return;
                                 const itemId = await publicClient.readContract({
                                   address: factoryAddress as Address,
@@ -1857,7 +1809,6 @@ function App() {
                                   functionName: "getItemsCount",
                                 });
 
-                                // Find the item ID by checking each item
                                 let foundId = -1;
                                 for (let i = 0; i < Number(itemId); i++) {
                                   const itemData = await publicClient!.readContract({
@@ -2122,7 +2073,6 @@ function App() {
                       setIsGranting(true);
                       setStatus("Enabling reveal…");
 
-                      // Convert reveal fee to wei
                       const revealFeeInWei = BigInt(Math.floor(parseFloat(revealFee) * 1e18));
 
                       const hash = await walletClient.writeContract({
@@ -2145,7 +2095,6 @@ function App() {
                         const key = `grant:${chainId}:${ratingItemAddress}:${address}`;
                         localStorage.setItem(key, "1");
                       } catch {
-                        // ignore write error (private mode, etc.)
                       }
                       setToast("Reveal enabled for your address.");
                       setStatus(`Access granted. Tx: ${hash}`);
@@ -2185,7 +2134,6 @@ function App() {
                   onClick={async () => {
                     try {
                       if (selected === null) return;
-                      // Auto-switch to Sepolia if needed
                       if (!canUseSepolia) {
                         try {
                           type Eth = { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> };
@@ -2228,7 +2176,6 @@ function App() {
                         args: [enc.handles[0], enc.inputProof],
                       };
                       const hash = await walletClient.writeContract(data);
-                      // Update local leaderboard instantly
                       try {
                         const last = lbData.length - 1;
                         if (last >= 0 && selected >= 1 && selected <= 5) {
@@ -2239,7 +2186,6 @@ function App() {
                           );
                         }
                       } catch {
-                        // ignore
                       }
                       setStatus(`Rating tx sent: ${hash}`);
                       setToast("Submitted. You can Reveal Average later once enough ratings.");
@@ -2561,7 +2507,6 @@ function App() {
                         throw new Error("Missing factory address. Set VITE_RATING_FACTORY_ADDRESS or open Advanced.");
                       }
 
-                      // ABI for factory
                       const factoryAbi = [
                         {
                           type: "function",
@@ -2577,10 +2522,8 @@ function App() {
                         },
                       ] as const;
 
-                      // Convert fee to wei
                       const feeInWei = BigInt(Math.floor(parseFloat(creationFee) * 1e18));
 
-                      // Try to simulate to get predicted address, but DO NOT block tx if it fails
                       let predictedAddress: Address | undefined = undefined;
                       try {
                         const sim = await publicClient.simulateContract({
@@ -2597,7 +2540,6 @@ function App() {
                         setStatus("Creating item… (simulation skipped)");
                       }
 
-                      // Always open wallet popup to send tx
                       const hash = await walletClient.writeContract({
                         abi: factoryAbi,
                         address: finalFactory as Address,

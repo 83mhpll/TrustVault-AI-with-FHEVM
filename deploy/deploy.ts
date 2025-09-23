@@ -12,8 +12,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   console.log(`FHECounter contract: `, deployedFHECounter.address);
 
-  // Deploy a default PrivateVote with 2 options for convenience if not present
-  // Allow reexec skip by tag control; ignore failures if already deployed
   try {
     const deployedPrivateVote = await deploy("PrivateVote", {
       from: deployer,
@@ -25,7 +23,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     console.warn("PrivateVote deploy skipped:", (e as Error).message);
   }
 
-  // Deploy factory
   try {
     const deployedFactory = await deploy("PrivateVoteFactory", {
       from: deployer,
@@ -36,7 +33,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     console.warn("PrivateVoteFactory deploy skipped:", (e as Error).message);
   }
 
-  // Deploy RatingFactory
   try {
     const deployedRatingFactory = await deploy("RatingFactory", {
       from: deployer,

@@ -1,17 +1,11 @@
 #!/usr/bin/env node
 
-/**
- * AI + FHEVM Integration Test Script
- * Tests the complete AI integration with FHEVM rating system
- */
-
 const fs = require("fs");
 const path = require("path");
 
 console.log("🤖 AI + FHEVM Integration Test Suite");
 console.log("=====================================\n");
 
-// Test 1: Check if models.json exists and is valid
 console.log("📋 Test 1: Model Catalog Data");
 try {
   const modelsPath = path.join(__dirname, "web/public/models.json");
@@ -30,7 +24,6 @@ try {
   console.log(`❌ Error loading models.json: ${error.message}\n`);
 }
 
-// Test 2: Check AI integration features in App.tsx
 console.log("🔍 Test 2: AI Integration Code");
 try {
   const appPath = path.join(__dirname, "web/src/App.tsx");
@@ -53,7 +46,6 @@ try {
   console.log(`❌ Error reading App.tsx: ${error.message}\n`);
 }
 
-// Test 3: Check CSS for AI styling
 console.log("🎨 Test 3: AI Styling");
 try {
   const cssPath = path.join(__dirname, "web/src/App.css");
@@ -68,7 +60,6 @@ try {
   console.log(`❌ Error reading App.css: ${error.message}\n`);
 }
 
-// Test 4: Check OpenAI API integration
 console.log("🔗 Test 4: OpenAI API Integration");
 try {
   const appPath = path.join(__dirname, "web/src/App.tsx");
@@ -83,7 +74,6 @@ try {
   console.log(`❌ Error checking OpenAI integration: ${error.message}\n`);
 }
 
-// Test 5: Revenue Model Implementation
 console.log("💰 Test 5: Revenue Model");
 try {
   const appPath = path.join(__dirname, "web/src/App.tsx");
@@ -107,7 +97,6 @@ try {
   console.log(`❌ Error checking revenue model: ${error.message}\n`);
 }
 
-// Test 6: FHEVM + AI Integration Points
 console.log("🔒 Test 6: FHEVM + AI Integration");
 try {
   const appPath = path.join(__dirname, "web/src/App.tsx");
@@ -129,7 +118,6 @@ try {
   console.log(`❌ Error checking FHEVM+AI integration: ${error.message}\n`);
 }
 
-// Summary
 console.log("📊 Test Summary");
 console.log("===============");
 console.log("✅ AI + FHEVM Integration is ready!");
