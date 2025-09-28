@@ -1,13 +1,13 @@
-# 🚀 TrustVault AI Deployment Guide
+#      TrustVault AI Deployment Guide
 
 > **Complete guide for deploying TrustVault AI to Vercel with public access**
 
-## 📋 Overview
+##      Overview
 
 This guide provides step-by-step instructions for deploying TrustVault AI to Vercel and ensuring it's accessible to the
 public.
 
-## 🎯 Prerequisites
+##      Prerequisites
 
 - GitHub repository with your code
 - Vercel account
@@ -15,7 +15,7 @@ public.
 - Sepolia testnet ETH
 - OpenAI API key (optional)
 
-## 🔧 Step 1: Vercel Setup
+##      Step 1: Vercel Setup
 
 ### 1.1 Create Vercel Account
 
@@ -29,7 +29,7 @@ public.
 2. Import your GitHub repository
 3. Select the repository: `AI-Rating-Board-with-FHEVM`
 
-## ⚙️ Step 2: Project Configuration
+##   �    Step 2: Project Configuration
 
 ### 2.1 Build Settings
 
@@ -73,35 +73,35 @@ Ensure your `vercel.json` file is configured correctly:
 }
 ```
 
-## 🌐 Step 3: Access Control Configuration
+##      Step 3: Access Control Configuration
 
 ### 3.1 Enable Public Access
 
 1. Go to your project in Vercel dashboard
-2. Navigate to **Settings** → **General**
+2. Navigate to **Settings**  �  **General**
 3. Scroll down to **Access Control**
 4. Ensure the following settings:
-   - ✅ **Public Access**: Enabled
-   - ❌ **OIDC Federation**: Disabled
-   - ❌ **Password Protection**: Disabled
-   - ❌ **Vercel Authentication**: Disabled
+   -     **Public Access**: Enabled
+   -     **OIDC Federation**: Disabled
+   -     **Password Protection**: Disabled
+   -     **Vercel Authentication**: Disabled
 
 ### 3.2 Disable OIDC Federation
 
 If you see "Secure Backend Access with OIDC Federation":
 
-1. Go to **Settings** → **Security**
+1. Go to **Settings**  �  **Security**
 2. Find **OIDC Federation** section
 3. Click **Disable** or **Remove**
 4. Confirm the action
 
 ### 3.3 Verify Public Access
 
-1. Go to **Settings** → **General**
+1. Go to **Settings**  �  **General**
 2. Check **Access Control** section
 3. Ensure it shows **"Public"** or **"No restrictions"**
 
-## 🚀 Step 4: Deployment
+##      Step 4: Deployment
 
 ### 4.1 Initial Deployment
 
@@ -120,7 +120,7 @@ git commit -m "Update for deployment"
 git push origin main
 ```
 
-## 🔍 Step 5: Verification
+##      Step 5: Verification
 
 ### 5.1 Test Deployment
 
@@ -137,7 +137,7 @@ Your deployment might be available at:
 - `https://trustvault-ai-demo.vercel.app`
 - `https://ai-rating-board-with-fhevm.vercel.app`
 
-## 🛠️ Step 6: Troubleshooting
+##         Step 6: Troubleshooting
 
 ### 6.1 Access Denied Issues
 
@@ -167,11 +167,11 @@ Your deployment might be available at:
 
 **Solution**:
 
-1. Go to **Settings** → **Environment Variables**
+1. Go to **Settings**  �  **Environment Variables**
 2. Add all required variables
 3. Redeploy the project
 
-## 📱 Step 7: Mobile Optimization
+##    � Step 7: Mobile Optimization
 
 ### 7.1 Responsive Design
 
@@ -189,7 +189,7 @@ For Progressive Web App features:
 2. Configure service worker
 3. Enable PWA features in Vercel
 
-## 🔒 Step 8: Security Considerations
+##      Step 8: Security Considerations
 
 ### 8.1 Environment Variables
 
@@ -203,7 +203,7 @@ For Progressive Web App features:
 - Consider authentication for production
 - Monitor usage and abuse
 
-## 📊 Step 9: Monitoring
+##      Step 9: Monitoring
 
 ### 9.1 Vercel Analytics
 
@@ -217,17 +217,17 @@ For Progressive Web App features:
 2. Configure alerts
 3. Monitor application health
 
-## 🎉 Step 10: Go Live
+##      Step 10: Go Live
 
 ### 10.1 Final Checklist
 
-- ✅ Application loads correctly
-- ✅ Wallet connection works
-- ✅ Smart contract interactions work
-- ✅ AI features function (if enabled)
-- ✅ Mobile responsive
-- ✅ Public access enabled
-- ✅ No access restrictions
+-     Application loads correctly
+-     Wallet connection works
+-     Smart contract interactions work
+-     AI features function (if enabled)
+-     Mobile responsive
+-     Public access enabled
+-     No access restrictions
 
 ### 10.2 Share Your Project
 
@@ -236,7 +236,7 @@ For Progressive Web App features:
 3. Submit to relevant communities
 4. Update project documentation
 
-## 🔄 Step 11: Maintenance
+##    � Step 11: Maintenance
 
 ### 11.1 Regular Updates
 
@@ -250,7 +250,7 @@ For Progressive Web App features:
 - Optimize images and assets
 - Implement caching strategies
 
-## 📞 Support
+##    � Support
 
 ### Common Issues
 
@@ -265,7 +265,7 @@ For Progressive Web App features:
 - **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
 - **Community**: Join our Discord for support
 
-## 🎯 Best Practices
+##      Best Practices
 
 ### Development
 
@@ -287,7 +287,7 @@ For Progressive Web App features:
 
 ---
 
-**Built with ❤️ using Zama FHEVM technology**
+**Built with   �    using Zama FHEVM technology**
 
 _TrustVault AI Deployment Guide - Where Privacy Meets Innovation_
 

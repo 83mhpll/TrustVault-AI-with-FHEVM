@@ -2,47 +2,7 @@ import { FhevmType } from "@fhevm/hardhat-plugin";
 import { task } from "hardhat/config";
 import type { TaskArguments } from "hardhat/types";
 
-/**
- * Tutorial: Deploy and Interact Locally (--network localhost)
- * ===========================================================
- *
- * 1. From a separate terminal window:
- *
- *   npx hardhat node
- *
- * 2. Deploy the FHECounter contract
- *
- *   npx hardhat --network localhost deploy
- *
- * 3. Interact with the FHECounter contract
- *
- *   npx hardhat --network localhost task:decrypt-count
- *   npx hardhat --network localhost task:increment --value 2
- *   npx hardhat --network localhost task:decrement --value 1
- *   npx hardhat --network localhost task:decrypt-count
- *
- *
- * Tutorial: Deploy and Interact on Sepolia (--network sepolia)
- * ===========================================================
- *
- * 1. Deploy the FHECounter contract
- *
- *   npx hardhat --network sepolia deploy
- *
- * 2. Interact with the FHECounter contract
- *
- *   npx hardhat --network sepolia task:decrypt-count
- *   npx hardhat --network sepolia task:increment --value 2
- *   npx hardhat --network sepolia task:decrement --value 1
- *   npx hardhat --network sepolia task:decrypt-count
- *
- */
 
-/**
- * Example:
- *   - npx hardhat --network localhost task:address
- *   - npx hardhat --network sepolia task:address
- */
 task("task:address", "Prints the FHECounter address").setAction(async function (_taskArguments: TaskArguments, hre) {
   const { deployments } = hre;
 
@@ -51,11 +11,6 @@ task("task:address", "Prints the FHECounter address").setAction(async function (
   console.log("FHECounter address is " + fheCounter.address);
 });
 
-/**
- * Example:
- *   - npx hardhat --network localhost task:decrypt-count
- *   - npx hardhat --network sepolia task:decrypt-count
- */
 task("task:decrypt-count", "Calls the getCount() function of Counter Contract")
   .addOptionalParam("address", "Optionally specify the Counter contract address")
   .setAction(async function (taskArguments: TaskArguments, hre) {
@@ -89,11 +44,6 @@ task("task:decrypt-count", "Calls the getCount() function of Counter Contract")
     console.log(`Clear count    : ${clearCount}`);
   });
 
-/**
- * Example:
- *   - npx hardhat --network localhost task:increment --value 1
- *   - npx hardhat --network sepolia task:increment --value 1
- */
 task("task:increment", "Calls the increment() function of FHECounter Contract")
   .addOptionalParam("address", "Optionally specify the FHECounter contract address")
   .addParam("value", "The increment value")
@@ -116,7 +66,6 @@ task("task:increment", "Calls the increment() function of FHECounter Contract")
 
     const fheCounterContract = await ethers.getContractAt("FHECounter", FHECounterDeployement.address);
 
-    // Encrypt the value passed as argument
     const encryptedValue = await fhevm
       .createEncryptedInput(FHECounterDeployement.address, signers[0].address)
       .add32(value)
@@ -136,11 +85,6 @@ task("task:increment", "Calls the increment() function of FHECounter Contract")
     console.log(`FHECounter increment(${value}) succeeded!`);
   });
 
-/**
- * Example:
- *   - npx hardhat --network localhost task:decrement --value 1
- *   - npx hardhat --network sepolia task:decrement --value 1
- */
 task("task:decrement", "Calls the decrement() function of FHECounter Contract")
   .addOptionalParam("address", "Optionally specify the FHECounter contract address")
   .addParam("value", "The decrement value")
@@ -163,7 +107,6 @@ task("task:decrement", "Calls the decrement() function of FHECounter Contract")
 
     const fheCounterContract = await ethers.getContractAt("FHECounter", FHECounterDeployement.address);
 
-    // Encrypt the value passed as argument
     const encryptedValue = await fhevm
       .createEncryptedInput(FHECounterDeployement.address, signers[0].address)
       .add32(value)

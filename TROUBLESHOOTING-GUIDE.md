@@ -1,13 +1,13 @@
-# ğŸ†˜ TrustVault AI Troubleshooting Guide
+#   †˜ TrustVault AI Troubleshooting Guide
 
 > **Complete troubleshooting guide for TrustVault AI platform**
 
-## ğŸ“‹ Overview
+##      Overview
 
 This guide helps you resolve common issues with TrustVault AI, including deployment, wallet connection, smart contract
 interactions, and AI features.
 
-## ğŸ” Quick Diagnosis
+##      Quick Diagnosis
 
 ### Common Issues Checklist
 
@@ -17,7 +17,7 @@ interactions, and AI features.
 - [ ] **AI Features**: Verify OpenAI API key
 - [ ] **Build Failures**: Check dependencies and environment
 
-## ğŸŒ Deployment Issues
+##      Deployment Issues
 
 ### Problem: Access Denied / Request Access Page
 
@@ -38,7 +38,7 @@ interactions, and AI features.
 1. **Check Vercel Project Settings**:
 
    ```
-   Vercel Dashboard â†’ Project â†’ Settings â†’ General
+   Vercel Dashboard  †  Project  †  Settings  †  General
    ```
 
    - Ensure **Public Access** is enabled
@@ -48,7 +48,7 @@ interactions, and AI features.
 2. **Verify Access Control**:
 
    ```
-   Settings â†’ Security â†’ Access Control
+   Settings  †  Security  †  Access Control
    ```
 
    - Should show "Public" or "No restrictions"
@@ -83,7 +83,7 @@ interactions, and AI features.
 1. **Check Build Logs**:
 
    ```
-   Vercel Dashboard â†’ Project â†’ Deployments â†’ View Logs
+   Vercel Dashboard  †  Project  †  Deployments  †  View Logs
    ```
 
 2. **Verify Dependencies**:
@@ -100,7 +100,7 @@ interactions, and AI features.
 3. **Set Environment Variables**:
 
    ```
-   Vercel Dashboard â†’ Project â†’ Settings â†’ Environment Variables
+   Vercel Dashboard  †  Project  †  Settings  †  Environment Variables
    ```
 
    Required variables:
@@ -141,7 +141,7 @@ interactions, and AI features.
    git push
    ```
 
-## ğŸ”— Wallet Connection Issues
+##      Wallet Connection Issues
 
 ### Problem: MetaMask Not Connecting
 
@@ -215,7 +215,7 @@ interactions, and AI features.
    - Try different RPC endpoint
    - Check Sepolia network status
 
-## ğŸ¤– AI Features Issues
+##   ¤– AI Features Issues
 
 ### Problem: AI Analysis Not Working
 
@@ -276,7 +276,7 @@ interactions, and AI features.
    - Check for required fields
    - Validate input data
 
-## ğŸ”’ Smart Contract Issues
+##      Smart Contract Issues
 
 ### Problem: Contract Interaction Errors
 
@@ -339,7 +339,7 @@ interactions, and AI features.
    - Enable required features
    - Check console for errors
 
-## ğŸ“± Mobile Issues
+##    ± Mobile Issues
 
 ### Problem: Mobile Wallet Connection
 
@@ -366,7 +366,7 @@ interactions, and AI features.
    - Use WalletConnect
    - Test with different browsers
 
-## ğŸ”§ Development Issues
+##      Development Issues
 
 ### Problem: Local Development Not Working
 
@@ -440,7 +440,7 @@ interactions, and AI features.
    - Check file paths
    - Ensure proper exports
 
-## ğŸ“Š Performance Issues
+##      Performance Issues
 
 ### Problem: Slow Loading
 
@@ -470,7 +470,7 @@ interactions, and AI features.
    - Implement service workers
    - Cache API responses
 
-## ğŸ†˜ Getting Help
+##   †˜ Getting Help
 
 ### Self-Help Resources
 
@@ -506,7 +506,7 @@ interactions, and AI features.
    - Consulting services
    - Custom development
 
-## ğŸ“ Reporting Issues
+##      Reporting Issues
 
 ### When Reporting Issues
 
@@ -568,7 +568,7 @@ Error: ...
 Add any other context about the problem here.
 ```
 
-## ğŸ¯ Prevention
+##      Prevention
 
 ### Best Practices
 
@@ -594,7 +594,7 @@ Add any other context about the problem here.
 
 ---
 
-**Built with â¤ï¸ using Zama FHEVM technology**
+**Built with   ¤    using Zama FHEVM technology**
 
 _TrustVault AI Troubleshooting Guide - Where Privacy Meets Innovation_
 

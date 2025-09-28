@@ -1,28 +1,28 @@
-# 🛡️ TrustVault AI Web Application
+#         TrustVault AI Web Application
 
 > **Enterprise-Grade Confidential AI Model Rating Platform** - Built with React, Vite, and FHEVM technology
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 
-## 🌟 Overview
+##      Overview
 
 TrustVault AI Web is a modern React application that provides a user-friendly interface for rating AI models with
 complete privacy using Zama FHEVM technology. The platform allows users to evaluate AI models confidentially while
 maintaining aggregated insights.
 
-## ✨ Features
+##     Features
 
-- 🔐 **Complete Privacy**: Individual ratings are encrypted and never revealed
-- 🛡️ **FHEVM Technology**: Powered by Zama's Fully Homomorphic Encryption
-- ⭐ **1-5 Star Rating**: Simple, intuitive rating system
-- 📊 **Aggregated Insights**: View collective averages without compromising privacy
-- 🎯 **AI Model Catalog**: Comprehensive database of AI models
-- 🤖 **AI-Powered Analytics**: Advanced insights using OpenAI integration
-- 🏢 **Business Solutions**: Enterprise-grade confidential data processing
-- 📱 **Responsive Design**: Optimized for all devices
+-      **Complete Privacy**: Individual ratings are encrypted and never revealed
+-         **FHEVM Technology**: Powered by Zama's Fully Homomorphic Encryption
+-     **1-5 Star Rating**: Simple, intuitive rating system
+-      **Aggregated Insights**: View collective averages without compromising privacy
+-      **AI Model Catalog**: Comprehensive database of AI models
+-   �� **AI-Powered Analytics**: Advanced insights using OpenAI integration
+-    � **Business Solutions**: Enterprise-grade confidential data processing
+-    � **Responsive Design**: Optimized for all devices
 
-## 🛠️ Technology Stack
+##         Technology Stack
 
 - **Frontend**: React 19 + Vite + TypeScript
 - **Blockchain**: Ethereum Sepolia + Zama FHEVM
@@ -31,7 +31,7 @@ maintaining aggregated insights.
 - **Styling**: CSS3 + Modern UI Components
 - **Deployment**: Vercel
 
-## 📋 Requirements
+##      Requirements
 
 - Node.js 20+
 - npm 7+
@@ -39,7 +39,7 @@ maintaining aggregated insights.
 - Sepolia testnet ETH
 - Deployed smart contracts
 
-## 🚀 Quick Start
+##      Quick Start
 
 ### 1. Installation
 
@@ -90,24 +90,24 @@ Open the local URL printed in the terminal (usually `http://localhost:5173`).
 4. **Rate Privately**: Select a model and give your 1-5 star rating
 5. **Reveal Averages**: View aggregated results without exposing individual votes
 
-## 🏗️ Project Structure
+##         Project Structure
 
 ```
 web/
-├── src/
-│   ├── components/          # React components
-│   ├── hooks/              # Custom React hooks
-│   ├── utils/              # Utility functions
-│   ├── types/              # TypeScript type definitions
-│   ├── App.tsx             # Main application component
-│   └── main.tsx            # Application entry point
-├── public/                 # Static assets
-├── dist/                   # Build output
-├── package.json            # Dependencies and scripts
-└── vite.config.ts          # Vite configuration
+          src/
+  �             components/          # React components
+  �             hooks/              # Custom React hooks
+  �             utils/              # Utility functions
+  �             types/              # TypeScript type definitions
+  �             App.tsx             # Main application component
+  �             main.tsx            # Application entry point
+          public/                 # Static assets
+          dist/                   # Build output
+          package.json            # Dependencies and scripts
+          vite.config.ts          # Vite configuration
 ```
 
-## 🔧 Available Scripts
+##      Available Scripts
 
 ```bash
 # Development
@@ -120,7 +120,7 @@ npm run lint               # Run ESLint
 npm run vercel-build       # Build for Vercel deployment
 ```
 
-## 🌐 Network Configuration
+##      Network Configuration
 
 ### Sepolia Testnet
 
@@ -134,7 +134,7 @@ npm run vercel-build       # Build for Vercel deployment
 - **RatingFactory**: `0x45Fba25A3Eea1d0f3A7f43B3939CF93F83bE8795`
 - **RatingItem**: `0xFA6A70E59D0A816C6D99a28a46E607566813B183`
 
-## 🔒 Privacy & Security
+##      Privacy & Security
 
 ### Encryption Details
 
@@ -145,12 +145,12 @@ npm run vercel-build       # Build for Vercel deployment
 
 ### Privacy Guarantees
 
-- ✅ Individual ratings never exposed
-- ✅ Only aggregated averages can be revealed
-- ✅ User controls their own decryption
-- ✅ No central authority can access individual votes
+-     Individual ratings never exposed
+-     Only aggregated averages can be revealed
+-     User controls their own decryption
+-     No central authority can access individual votes
 
-## 🤖 AI Integration
+##   �� AI Integration
 
 ### OpenAI GPT-4 Features
 
@@ -170,16 +170,16 @@ const analysis = await analyzeRatingsWithAI(ratings, {
 });
 ```
 
-## 📱 Mobile Support
+##    � Mobile Support
 
 TrustVault AI is fully responsive and optimized for:
 
-- 📱 Mobile devices (iOS/Android)
-- 💻 Desktop browsers (Chrome, Firefox, Safari, Edge)
-- 🖥️ Tablet interfaces
-- 🌐 Progressive Web App (PWA) ready
+-    � Mobile devices (iOS/Android)
+-    � Desktop browsers (Chrome, Firefox, Safari, Edge)
+-   ��    Tablet interfaces
+-      Progressive Web App (PWA) ready
 
-## 🚀 Deployment
+##      Deployment
 
 ### Vercel Deployment
 
@@ -198,7 +198,7 @@ TrustVault AI is fully responsive and optimized for:
 - **OIDC Federation**: Disable if you want public access
 - **Password Protection**: Disable for public access
 
-## 🧪 Testing
+##      Testing
 
 ```bash
 # Run tests
@@ -211,7 +211,7 @@ npm run test:coverage
 npm run test:e2e
 ```
 
-## 🆘 Troubleshooting
+##   �� Troubleshooting
 
 ### Common Issues
 
@@ -241,7 +241,7 @@ npm run test:e2e
 - **Documentation**: Check the main README.md
 - **Community**: Join our Discord for support
 
-## 🤝 Contributing
+##   �  Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](../CONTRIBUTING.md) for details.
 
@@ -253,11 +253,11 @@ We welcome contributions! Please see our [Contributing Guidelines](../CONTRIBUTI
 4. Add tests
 5. Submit a pull request
 
-## 📄 License
+##    � License
 
 This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##   �  Acknowledgments
 
 - **Zama**: For the revolutionary FHEVM technology
 - **Ethereum Foundation**: For the robust blockchain infrastructure
@@ -266,6 +266,6 @@ This project is licensed under the MIT License - see the [LICENSE](../LICENSE) f
 
 ---
 
-**Built with ❤️ using Zama FHEVM technology**
+**Built with   �    using Zama FHEVM technology**
 
 _TrustVault AI Web - Where Privacy Meets Innovation_

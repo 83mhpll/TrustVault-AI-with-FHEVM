@@ -1,11 +1,8 @@
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 import {FHE, euint32, externalEuint32, ebool} from "@fhevm/solidity/lib/FHE.sol";
 import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
 
-/// @title RatingItem - encrypted rating item (1..5 by default)
-/// @notice Stores encrypted sum and count of ratings. Average is computed off-chain after user decryption.
 contract RatingItem is SepoliaConfig {
     error InvalidBounds();
 
@@ -31,11 +28,9 @@ contract RatingItem is SepoliaConfig {
         maxScore = _max;
     }
 
-    /// @notice Submit an encrypted rating
     function rate(externalEuint32 inputScore, bytes calldata inputProof) external {
         euint32 v = FHE.fromExternal(inputScore, inputProof);
 
-        // Clamp to [minScore, maxScore]
         euint32 minE = FHE.asEuint32(minScore);
         euint32 maxE = FHE.asEuint32(maxScore);
         euint32 clamped = FHE.min(FHE.max(v, minE), maxE);
@@ -57,14 +52,12 @@ contract RatingItem is SepoliaConfig {
         return _count;
     }
 
-    /// @notice Grant read permission to a reader for both sum and count (with fee)
     function allowAllTo(address reader) external payable {
         require(msg.value >= revealFee, "Insufficient reveal fee");
 
         FHE.allow(_sum, reader);
         FHE.allow(_count, reader);
 
-        // Transfer fee to factory
         if (factory != address(0)) {
             payable(factory).transfer(msg.value);
         }

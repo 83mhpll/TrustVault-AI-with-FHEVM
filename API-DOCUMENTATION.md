@@ -1,20 +1,20 @@
-# 📚 TrustVault AI API Documentation
+#      TrustVault AI API Documentation
 
 > **Complete API documentation for TrustVault AI platform**
 
-## 📋 Overview
+##      Overview
 
 TrustVault AI provides a comprehensive API for rating AI models with complete privacy using FHEVM technology. This
 documentation covers all available endpoints, authentication, and usage examples.
 
-## 🔗 Base URL
+##      Base URL
 
 ```
 Production: https://trustvault-ai-demo.vercel.app
 Development: http://localhost:5173
 ```
 
-## 🔐 Authentication
+##      Authentication
 
 ### API Key Authentication
 
@@ -33,7 +33,7 @@ const headers = {
 const { address, signer } = await connectWallet();
 ```
 
-## 🏗️ Smart Contract APIs
+##         Smart Contract APIs
 
 ### RatingFactory Contract
 
@@ -130,7 +130,7 @@ async function getRatingStats(itemAddress: string) {
 }
 ```
 
-## 🤖 AI Analytics APIs
+##   �� AI Analytics APIs
 
 ### AI Analysis
 
@@ -207,7 +207,7 @@ async function generateBusinessIntelligence(params: BusinessIntelligenceParams) 
 }
 ```
 
-## 🔒 Privacy-Preserving APIs
+##      Privacy-Preserving APIs
 
 ### Encrypted Data Processing
 
@@ -253,7 +253,7 @@ async function generateZKProof(params: ZKProofParams) {
 }
 ```
 
-## 📊 Analytics APIs
+##      Analytics APIs
 
 ### Rating Analytics
 
@@ -323,7 +323,7 @@ async function getModelPerformance(params: ModelPerformanceParams) {
 }
 ```
 
-## 🌐 On-Chain Analytics APIs
+##      On-Chain Analytics APIs
 
 ### Transaction Analysis
 
@@ -367,7 +367,7 @@ async function getSmartContractMetrics(params: SmartContractMetricsParams) {
 }
 ```
 
-## 🔗 Oracle Integration APIs
+##      Oracle Integration APIs
 
 ### Submit Data to Oracle
 
@@ -412,7 +412,7 @@ async function getOracleData(params: OracleDataParams) {
 }
 ```
 
-## 📱 SDK Examples
+##    � SDK Examples
 
 ### JavaScript/TypeScript SDK
 
@@ -462,7 +462,7 @@ analytics = client.get_analytics(
 )
 ```
 
-## 🔧 Error Handling
+##      Error Handling
 
 ### Error Response Format
 
@@ -492,7 +492,7 @@ analytics = client.get_analytics(
 | `NETWORK_ERROR`        | Network connection issue | Check internet connection |
 | `AUTHENTICATION_ERROR` | Invalid API key          | Verify API key            |
 
-## 📊 Rate Limits
+##      Rate Limits
 
 ### API Rate Limits
 
@@ -511,7 +511,7 @@ X-RateLimit-Remaining: 95
 X-RateLimit-Reset: 1640995200
 ```
 
-## 🔒 Security
+##      Security
 
 ### API Key Security
 
@@ -527,7 +527,7 @@ X-RateLimit-Reset: 1640995200
 - No personal data stored
 - GDPR compliant
 
-## 📈 Monitoring
+##      Monitoring
 
 ### Health Check
 
@@ -567,7 +567,7 @@ async function getUsageStats() {
 }
 ```
 
-## 🆘 Support
+##   �� Support
 
 ### Getting Help
 
@@ -584,7 +584,7 @@ async function getUsageStats() {
 
 ---
 
-**Built with ❤️ using Zama FHEVM technology**
+**Built with   �    using Zama FHEVM technology**
 
 _TrustVault AI API Documentation - Where Privacy Meets Innovation_
 

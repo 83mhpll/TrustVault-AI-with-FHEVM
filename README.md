@@ -305,11 +305,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
 - **Documentation**: Check the documentation files above
-- **Community**: Join our Discord for support
-- **Email**: support@trustvault.ai
-- **Website**: [trustvault.ai](https://trustvault.ai)
 
----
 
 **Built with ❤️ using Zama FHEVM technology**
 
