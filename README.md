@@ -3,7 +3,8 @@
 > **The Future of Private AI Model Evaluation** - Rate AI models with complete confidentiality using Zama FHEVM
 > technology.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo.vercel.app)
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
@@ -12,6 +13,17 @@
 TrustVault AI is a revolutionary **confidential rating platform** that allows users to evaluate AI models with complete
 privacy. Built on Zama FHEVM technology, your individual ratings are never exposed - only encrypted aggregates are
 stored on-chain.
+
+### 🛡️ **Why Choose TrustVault AI?**
+
+**Unlike traditional platforms, we CANNOT access your private information:**
+
+- ❌ **Cannot see your seed phrase or private keys**
+- ❌ **Cannot track your personal behavior**
+- ❌ **Cannot sell your private data**
+- ❌ **Cannot compromise your privacy**
+
+**This makes TrustVault AI the most secure choice for AI model evaluation.**
 
 ### ✨ Key Features
 
@@ -27,6 +39,8 @@ stored on-chain.
 ## 🚀 Live Demo
 
 **Experience TrustVault AI now**: [https://trustvault-ai-demo.vercel.app](https://trustvault-ai-demo.vercel.app)
+
+**Experience TrustVault AI now**: [https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 
 ### 🎯 Quick Start Guide
 
@@ -151,19 +165,49 @@ npm run build
 
 ## 🔒 Privacy & Security
 
-### Encryption Details
+### 🛡️ **Why TrustVault AI is the Most Secure Choice**
+
+**We CANNOT see your private information:**
+
+- ❌ **Seed Phrase** - Your wallet recovery phrase
+- ❌ **Private Key** - Your wallet's private key
+- ❌ **Password** - Your wallet password
+- ❌ **Individual Ratings** - Your specific ratings are encrypted
+
+**We CAN only see public information:**
+
+- ✅ **Public Address** - Your wallet's public address
+- ✅ **Transaction History** - Public blockchain transactions
+- ✅ **Aggregated Statistics** - Combined, anonymous data
+
+### 🔐 **FHEVM Privacy Protection**
 
 - **Individual Ratings**: Encrypted using `euint32` FHE types
 - **Storage**: Only encrypted sum and count stored on-chain
 - **Decryption**: Client-side via Zama Relayer (EIP-712)
 - **Access Control**: FHE ACL for ciphertext protection
+- **Zero-Knowledge Processing**: We process data without seeing it
 
-### Privacy Guarantees
+### 🎯 **Privacy Guarantees**
 
 - ✅ Individual ratings never exposed
 - ✅ Only aggregated averages can be revealed
 - ✅ User controls their own decryption
 - ✅ No central authority can access individual votes
+- ✅ **We cannot access your private keys or seed phrases**
+- ✅ **Your data is encrypted before leaving your device**
+- ✅ **Complete privacy protection with FHEVM technology**
+
+### 🚨 **Why This Matters**
+
+Traditional platforms can:
+
+- 🔴 Access your private data
+- 🔴 Track your behavior
+- 🔴 Sell your information
+- 🔴 Compromise your privacy
+
+**TrustVault AI cannot do any of these things** - it's technically impossible with our FHEVM architecture.
 
 ## 📊 Features Overview
 
@@ -215,14 +259,6 @@ TrustVault AI is fully responsive and optimized for:
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -272,6 +308,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [API Documentation](API-DOCUMENTATION.md)
 - [Deployment Guide](DEPLOYMENT-GUIDE.md)
 - [Troubleshooting Guide](TROUBLESHOOTING-GUIDE.md)
+- [Privacy & Security Guide](PRIVACY-SECURITY-GUIDE.md)
 
 ## 🔧 Deployment
 
@@ -306,7 +343,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
 - **Documentation**: Check the documentation files above
 
+feature/ai-integration
+- **Website**: [trustvault.ai](https://trustvault.ai)
+ main
 
-**Built with ❤️ using Zama FHEVM technology**
+
+**Built with using Zama FHEVM technology**
 
 _TrustVault AI - Where Privacy Meets Innovation_

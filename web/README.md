@@ -18,9 +18,9 @@ maintaining aggregated insights.
 -     **1-5 Star Rating**: Simple, intuitive rating system
 -      **Aggregated Insights**: View collective averages without compromising privacy
 -      **AI Model Catalog**: Comprehensive database of AI models
--   §ñ **AI-Powered Analytics**: Advanced insights using OpenAI integration
--    ¢ **Business Solutions**: Enterprise-grade confidential data processing
--    ± **Responsive Design**: Optimized for all devices
+-   ÔøΩÔøΩ **AI-Powered Analytics**: Advanced insights using OpenAI integration
+-    ÔøΩ **Business Solutions**: Enterprise-grade confidential data processing
+-    ÔøΩ **Responsive Design**: Optimized for all devices
 
 ##         Technology Stack
 
@@ -95,12 +95,12 @@ Open the local URL printed in the terminal (usually `http://localhost:5173`).
 ```
 web/
           src/
-  Ç             components/          # React components
-  Ç             hooks/              # Custom React hooks
-  Ç             utils/              # Utility functions
-  Ç             types/              # TypeScript type definitions
-  Ç             App.tsx             # Main application component
-  Ç             main.tsx            # Application entry point
+  ÔøΩ             components/          # React components
+  ÔøΩ             hooks/              # Custom React hooks
+  ÔøΩ             utils/              # Utility functions
+  ÔøΩ             types/              # TypeScript type definitions
+  ÔøΩ             App.tsx             # Main application component
+  ÔøΩ             main.tsx            # Application entry point
           public/                 # Static assets
           dist/                   # Build output
           package.json            # Dependencies and scripts
@@ -136,21 +136,49 @@ npm run vercel-build       # Build for Vercel deployment
 
 ##      Privacy & Security
 
-### Encryption Details
+### üõ°Ô∏è **Complete Privacy Protection**
+
+**We CANNOT access your private information:**
+- ‚ùå **Seed Phrase** - Your wallet recovery phrase
+- ‚ùå **Private Key** - Your wallet's private key
+- ‚ùå **Password** - Your wallet password
+- ‚ùå **Individual Ratings** - Your specific ratings are encrypted
+
+**We CAN only see public information:**
+- ‚úÖ **Public Address** - Your wallet's public address
+- ‚úÖ **Transaction History** - Public blockchain transactions
+- ‚úÖ **Aggregated Statistics** - Combined, anonymous data
+
+### üîê **FHEVM Encryption Details**
 
 - **Individual Ratings**: Encrypted using `euint32` FHE types
 - **Storage**: Only encrypted sum and count stored on-chain
 - **Decryption**: Client-side via Zama Relayer (EIP-712)
 - **Access Control**: FHE ACL for ciphertext protection
+- **Zero-Knowledge Processing**: We process data without seeing it
 
-### Privacy Guarantees
+### üéØ **Privacy Guarantees**
 
+feature/ai-integration
 -     Individual ratings never exposed
 -     Only aggregated averages can be revealed
 -     User controls their own decryption
 -     No central authority can access individual votes
 
-##   §ñ AI Integration
+- ‚úÖ Individual ratings never exposed
+- ‚úÖ Only aggregated averages can be revealed
+- ‚úÖ User controls their own decryption
+- ‚úÖ No central authority can access individual votes
+- ‚úÖ **We cannot access your private keys or seed phrases**
+- ‚úÖ **Your data is encrypted before leaving your device**
+- ‚úÖ **Complete privacy protection with FHEVM technology**
+
+### üö® **Why This Matters**
+
+Traditional platforms can access your private data, but **TrustVault AI cannot** - it's technically impossible with our FHEVM architecture.
+ main
+
+##   ÔøΩÔøΩ AI Integration
 
 ### OpenAI GPT-4 Features
 
@@ -170,13 +198,13 @@ const analysis = await analyzeRatingsWithAI(ratings, {
 });
 ```
 
-##    ± Mobile Support
+##    ÔøΩ Mobile Support
 
 TrustVault AI is fully responsive and optimized for:
 
--    ± Mobile devices (iOS/Android)
--    ª Desktop browsers (Chrome, Firefox, Safari, Edge)
--   ñ•    Tablet interfaces
+-    ÔøΩ Mobile devices (iOS/Android)
+-    ÔøΩ Desktop browsers (Chrome, Firefox, Safari, Edge)
+-   ÔøΩÔøΩ    Tablet interfaces
 -      Progressive Web App (PWA) ready
 
 ##      Deployment
@@ -211,7 +239,7 @@ npm run test:coverage
 npm run test:e2e
 ```
 
-##   Üò Troubleshooting
+##   ÔøΩÔøΩ Troubleshooting
 
 ### Common Issues
 
@@ -241,7 +269,7 @@ npm run test:e2e
 - **Documentation**: Check the main README.md
 - **Community**: Join our Discord for support
 
-##   §  Contributing
+##   ÔøΩ  Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](../CONTRIBUTING.md) for details.
 
@@ -253,11 +281,11 @@ We welcome contributions! Please see our [Contributing Guidelines](../CONTRIBUTI
 4. Add tests
 5. Submit a pull request
 
-##    Ñ License
+##    ÔøΩ License
 
 This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
-##   ô  Acknowledgments
+##   ÔøΩ  Acknowledgments
 
 - **Zama**: For the revolutionary FHEVM technology
 - **Ethereum Foundation**: For the robust blockchain infrastructure
@@ -266,6 +294,6 @@ This project is licensed under the MIT License - see the [LICENSE](../LICENSE) f
 
 ---
 
-**Built with   §    using Zama FHEVM technology**
+**Built with   ÔøΩ    using Zama FHEVM technology**
 
 _TrustVault AI Web - Where Privacy Meets Innovation_
