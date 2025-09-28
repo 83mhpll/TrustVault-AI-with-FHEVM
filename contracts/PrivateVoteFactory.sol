@@ -1,16 +1,9 @@
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
 import {PrivateVote} from "./PrivateVote.sol";
 
-/// @title PrivateVoteFactory
-/// @author fhevm-private-vote
-/// @notice Minimal factory allowing anyone to create a new PrivateVote instance with a custom number of options,
-///         plus lightweight on-chain metadata for question and option labels.
 contract PrivateVoteFactory {
-    /// @dev Thrown when options length is not within [2..8].
     error InvalidOptionsCount();
-    /// @dev Thrown when an invalid poll id is provided.
     error BadPollId();
 
     struct PollMeta {
@@ -31,11 +24,6 @@ contract PrivateVoteFactory {
         string question
     );
 
-    /// @notice Create a new encrypted poll
-    /// @param question Human-readable question text
-    /// @param options Plaintext option labels (2..8)
-    /// @return poll The deployed PrivateVote address
-    /// @return id The poll id inside the factory
     function createPoll(string memory question, string[] memory options) external returns (address poll, uint256 id) {
         if (options.length < 2 || options.length > 8) revert InvalidOptionsCount();
 
@@ -56,12 +44,10 @@ contract PrivateVoteFactory {
         emit PollCreated(id, poll, msg.sender, m.optionsCount, question);
     }
 
-    /// @notice Total number of polls created
     function getPollsCount() external view returns (uint256) {
         return _polls.length;
     }
 
-    /// @notice Return poll metadata
     function getPoll(
         uint256 id
     )

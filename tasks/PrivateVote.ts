@@ -2,9 +2,6 @@ import { FhevmType } from "@fhevm/hardhat-plugin";
 import { task } from "hardhat/config";
 import type { TaskArguments } from "hardhat/types";
 
-/**
- * PrivateVote tasks
- */
 
 task("task:pv:address", "Prints the PrivateVote address").setAction(async function (_args: TaskArguments, hre) {
   const { deployments } = hre;
@@ -67,7 +64,6 @@ task("task:pv:decrypt-all", "Decrypt all tallies [--address <contract>]")
     const signers = await ethers.getSigners();
     const contract = await ethers.getContractAt("PrivateVote", pvDeployment.address);
 
-    // Read number of options from chain (via call)
     const numOptions: bigint = await contract.numOptions();
     const counts: number[] = [];
 

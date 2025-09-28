@@ -52,11 +52,9 @@ describe("PrivateVote", function () {
     const tx2 = await contract.connect(signers.bob).vote(encBob.handles[0], encBob.inputProof);
     await tx2.wait();
 
-    // Ensure alice is allowed by the contract to read all tallies
     const txAllow = await contract.allowAllTo(signers.alice.address);
     await txAllow.wait();
 
-    // decrypt tallies for alice (she got access via FHE.allow in contract)
     const n = await contract.numOptions();
     const counts: number[] = [];
     for (let i = 0; i < Number(n); i++) {
