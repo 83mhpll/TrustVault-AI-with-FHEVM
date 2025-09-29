@@ -326,6 +326,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Technical Documentation
 
 - [Architecture Overview](ARCHITECTURE.md) - **NEW!** Complete system architecture and diagrams
+- [Vercel Deployment Guide](VERCEL_DEPLOYMENT.md) - **NEW!** Complete deployment configuration
 - [AI-FHEVM Integration Guide](AI-FHEVM-INTEGRATION.md)
 - [Business Solutions](AI-BUSINESS-SOLUTIONS.md)
 - [Business Plan](BUSINESS-PLAN.md)
