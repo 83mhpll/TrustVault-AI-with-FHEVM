@@ -1,6 +1,24 @@
 {
   "version": 2,
-  "builds": [{ "src": "web/package.json", "use": "@vercel/static-build" }],
-  "public": true,
-  "access": "public"
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "web/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/web/dist/$1"
+    }
+  ],
+  "env": {
+    "VITE_PRIVATE_VOTE_ADDRESS": "0xFA6A70E59D0A816C6D99a28a46E607566813B183",
+    "VITE_RATING_FACTORY_ADDRESS": "0x45Fba25A3Eea1d0f3A7f43B3939CF93F83bE8795",
+    "VITE_ZAMA_RELAYER_URL": "https://api.zama.ai/relayer",
+    "VITE_SEPOLIA_FAUCET_URL": "https://www.alchemy.com/faucets/ethereum-sepolia"
+  }
 }
