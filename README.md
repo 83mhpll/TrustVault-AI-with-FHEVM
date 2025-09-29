@@ -3,7 +3,7 @@
 > **The Future of Private AI Model Evaluation** - Rate AI models with complete confidentiality using Zama FHEVM
 > technology.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-TrustVault%20AI-brightgreen?style=for-the-badge&logo=vercel)](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 [![Network](https://img.shields.io/badge/Network-Sepolia%20Testnet-blue?style=for-the-badge&logo=ethereum)](https://sepolia.etherscan.io)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
@@ -26,7 +26,8 @@ stored on-chain.
 
 ## 🚀 Live Demo
 
-**Experience TrustVault AI now**: [https://trustvault-ai-demo.vercel.app](https://trustvault-ai-demo.vercel.app)
+**Experience TrustVault AI now**:
+[https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app](https://trustvault-ai-demo-lkaw1ik7t-83mhplls-projects.vercel.app)
 
 ### 🎯 Quick Start Guide
 
@@ -85,8 +86,8 @@ TrustVault AI operates on a sustainable revenue model:
 
 ```bash
 # Clone the repository
-git clone https://github.com/83mhpll/TrustVault-AI.git
-cd TrustVault-AI
+git clone https://github.com/83mhpll/TrustVault-AI-with-FHEVM.git
+cd TrustVault-AI-with-FHEVM
 
 # Install dependencies
 npm install
@@ -149,21 +150,40 @@ npm test
 npm run build
 ```
 
-## 🔒 Privacy & Security
+## 🔒 Privacy & Security - FHEVM Technology
 
-### Encryption Details
+### 🔐 FHEVM Encryption Details
 
-- **Individual Ratings**: Encrypted using `euint32` FHE types
-- **Storage**: Only encrypted sum and count stored on-chain
-- **Decryption**: Client-side via Zama Relayer (EIP-712)
+- **Individual Ratings**: Encrypted using `euint32` FHE types from Zama FHEVM
+- **Storage**: Only encrypted sum and count stored on-chain (never plaintext)
+- **Decryption**: Client-side via Zama Relayer (EIP-712) - only you can decrypt
 - **Access Control**: FHE ACL for ciphertext protection
+- **Zero-Knowledge**: No one can see your individual ratings, not even the platform
 
-### Privacy Guarantees
+### 🛡️ Privacy Guarantees
 
-- ✅ Individual ratings never exposed
-- ✅ Only aggregated averages can be revealed
-- ✅ User controls their own decryption
-- ✅ No central authority can access individual votes
+- ✅ **Individual ratings never exposed** - Your 1-5 star rating is encrypted
+- ✅ **Only aggregated averages can be revealed** - Community sees averages only
+- ✅ **User controls their own decryption** - You hold the decryption key
+- ✅ **No central authority can access individual votes** - Even we can't see your ratings
+- ✅ **FHEVM Protection** - Powered by Zama's Fully Homomorphic Encryption
+- ✅ **On-Chain Privacy** - Ratings processed without revealing content
+
+### 🎯 Why FHEVM Matters
+
+**Traditional Rating Systems:**
+
+- ❌ Your ratings are visible to everyone
+- ❌ Platform can see and manipulate your data
+- ❌ No privacy protection
+- ❌ Centralized control
+
+**TrustVault AI with FHEVM:**
+
+- ✅ Your ratings are completely private
+- ✅ Platform cannot access individual data
+- ✅ Full privacy protection
+- ✅ Decentralized and secure
 
 ## 📊 Features Overview
 
@@ -236,15 +256,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🚀 Roadmap
 
-### Phase 1 (Current)
+### Phase 1 (Current) - ✅ COMPLETED
 
-- ✅ Core rating functionality
-- ✅ Model catalog
-- ✅ Basic analytics
-- ✅ Revenue model
+- ✅ Core rating functionality with FHEVM privacy
+- ✅ Model catalog with comprehensive database
+- ✅ Basic analytics with AI integration
+- ✅ Revenue model with sustainable fees
 - ✅ AI Analytics API Marketplace
-- ✅ UI/UX improvements
-- ✅ Documentation updates
+- ✅ UI/UX improvements with modern design
+- ✅ Documentation updates with architecture diagrams
+- ✅ **NEW!** Complete FHEVM privacy protection
+- ✅ **NEW!** Architecture documentation
+- ✅ **NEW!** Real deployment links
 
 ### Phase 2 (Next)
 
@@ -266,6 +289,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Technical Documentation
 
+- [Architecture Overview](ARCHITECTURE.md) - **NEW!** Complete system architecture and diagrams
 - [AI-FHEVM Integration Guide](AI-FHEVM-INTEGRATION.md)
 - [Business Solutions](AI-BUSINESS-SOLUTIONS.md)
 - [Business Plan](BUSINESS-PLAN.md)
@@ -303,9 +327,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Support
 
-- **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/AI-Rating-Board-with-FHEVM/issues)
+- **GitHub Issues**: [Report bugs and feature requests](https://github.com/83mhpll/TrustVault-AI-with-FHEVM/issues)
 - **Documentation**: Check the documentation files above
-
 
 **Built with ❤️ using Zama FHEVM technology**
 
